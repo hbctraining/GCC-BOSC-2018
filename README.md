@@ -12,3 +12,16 @@ This two-part workshop is geared towards researchers who are thinking about cond
 * Overview of commonly used workflows for differential gene expression, de-novo assembly, isoform quantification and other uses of RNA sequencing.
 
 The focus of this workshop is to outline current standards and required resources for the analysis of RNA sequencing data. This workshop will not provide an exhaustive list of software tools or pipelines available; rather it aims to provide a fruitful discussion on how best to prepare for performing RNA-seq data analysis from the lab to manuscript preparation.
+
+### Learning Objectives
+
+- 
+
+> These materials are developed for a trainer-led workshop, but also amenable to self-guided learning.
+
+### Contents
+
+
+| Lessons            | Duration |
+|:------------------------|:----------|
+| |  |
