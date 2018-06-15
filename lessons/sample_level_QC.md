@@ -14,7 +14,7 @@ The main factors often considered during normalization are:
  
  - **Gene length:** Accounting for gene length is necessary for comparing expression between different genes within the same sample. The number of reads mapped to a longer gene can appear to have equal count/expression as a shorter gene that is more highly expressed. 
  
-    <img src="../img/normalization_methods_length.png" width="400">
+    <img src="../img/normalization_methods_length.png" width="200">
  
  - **RNA composition:** A few highly differentially expressed genes can skew some types of normalization methods. Accounting for RNA composition is recommended for comparison of expression between samples, and is particularly important when performing differential expression analyses [[1](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-10-r106)]
     
