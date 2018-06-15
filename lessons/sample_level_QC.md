@@ -52,3 +52,28 @@ In contrast to RPKM/FPKM, TPM-normalized counts normalize for both sequencing de
 
 > *NOTE:* [This video by StatQuest](http://www.rna-seqblog.com/rpkm-fpkm-and-tpm-clearly-explained/) shows in more detail why TPM should be used in place of RPKM/FPKM if needing to normalize for sequencing depth and gene length.
 
+# Quality Control
+
+The next step in the DESeq2 workflow is QC, which includes sample-level and gene-level steps to perform QC checks on the count data to help us ensure that the samples/replicates look good. 
+
+<img src="../img/deseq_workflow_qc.png" width="200">
+
+## Sample-level QC
+
+A useful initial step in an RNA-seq analysis is often to assess overall similarity between samples: 
+
+- Which samples are similar to each other, which are different? 
+- Does this fit to the expectation from the experiment’s design? 
+- What are the major sources of variation in the dataset?
+
+Log2-transformed normalized counts are used to assess similarity between samples using Principal Component Analysis (PCA) and hierarchical clustering. DESeq2 uses a **regularized log transform** (rlog) of the normalized counts for sample-level QC as it moderates the variance across the mean, thereby improving the distances/clustering for these visualization methods.
+
+<img src="../img/rlog_transformation.png" width="500">
+
+Sample-level QC allows us to see how well our replicates cluster together, as well as, observe whether our experimental condition represents the major source of variation in the data. Performing sample-level QC can also identify any sample outliers, which may need to be explored to determine whether they need to be removed prior to DE analysis. 
+
+<img src="../img/sample_qc.png" width="700">
+
+### [Principal Component Analysis (PCA)](https://hbctraining.github.io/DGE_workshop/lessons/principal_component_analysis.html)
+
+Principal Component Analysis (PCA) is a technique used to emphasize variation and bring out strong patterns in a dataset (dimensionality reduction). For details regarding the calculations performed for PCA, we encourage you to explore [StatQuest's video](https://www.youtube.com/watch?v=_UVHneBUBW0). 
