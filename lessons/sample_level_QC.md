@@ -76,4 +76,59 @@ Sample-level QC allows us to see how well our replicates cluster together, as we
 
 ### [Principal Component Analysis (PCA)](https://hbctraining.github.io/DGE_workshop/lessons/principal_component_analysis.html)
 
-Principal Component Analysis (PCA) is a technique used to emphasize variation and bring out strong patterns in a dataset (dimensionality reduction). For details regarding the calculations performed for PCA, we encourage you to explore [StatQuest's video](https://www.youtube.com/watch?v=_UVHneBUBW0). 
+Principal Component Analysis (PCA) is a technique used to emphasize variation and bring out strong patterns in a dataset. To explore the variation in the data, we could plot the expression values of each gene for each of our *n* samples against each other; we could do this pairwise or we could do this in *n*-dimensional space. If we have more than 3 samples, we cannot visualize in *n*-dimensional space. PCA offers a dimensionality reduction technique that finds the greatest amounts of variation in a dataset and assigns them to principal components.
+
+The principal component (PC) explaining the greatest amount of variation in the dataset is PC1, while the PC explaining the second greatest amount of variation in the data is PC2, and so on and so forth until PC*n*.
+
+PCA plots two PCs against each other, generally focusing on PC1 and PC2, which explain the largest amounts of variation in the data. **If two samples have similar levels of expression for the genes that contribute significantly to the variation represented by PC1, they will be plotted close together on the PC1 axis.** Therefore, we would expect that biological replicates to have similar scores (since the same genes are changing) and cluster together on PC1 and/or PC2, and the samples from different treatment groups to have different score. This is easiest to understand by visualizing example PCA plots.
+
+In the plot below we can see our samplegroups separate on PC1, this is generally what we hope for. PC1 explains 89% of the variation in the data, so it's likely that this variation is due to differences between our samplegroups, EN (pink) and ENR (blue).
+
+<img src="../img/PCA_example4.png" width="400">
+
+We can use other variables **present in our metadata** to explore other causes of the variation in our data:
+
+<img src="../img/PCA_example5.png" width="400">
+
+We can determine that the 5% of variation in the data represented by PC2 is due to variation between individuals in this paired design example.
+
+In the next example, we can visualize the samples clustering by genotype on PC2 (13% variance). **If we saw one of the red samples below clustering with the blue samples (or vice versa), we might be worried about a mix-up. It would give us sufficient cause to remove that sample as an outlier and/or do some follow-up tests in the lab.**
+
+<img src="../img/PCA_example1.png" width="400">
+
+We can see that the plasmid expression level represents the major source of variation in the data on PC1 (55% variance).
+
+<img src="../img/PCA_example2.png" width="400">
+
+PCA is also a nice way to look for batch effects. In the below figure, we see batch 1 separate distinctly from batches 2 and 3.
+
+<img src="../img/PCA_example6.png" width="400">
+
+Even if your samples do not separate by PC1 or PC2, you may still get biologically relevant results from the DE analysis, just don't be surprised if you do not get a large number of DE genes. To give more power to the tool for detecting DE genes, it is best to account for  major, known sources of variation in your model. 
+
+For details regarding the calculations performed for PCA, we encourage you to explore [StatQuest's video](https://www.youtube.com/watch?v=_UVHneBUBW0). 
+
+***
+**Exercise**
+
+The figure below was generated from a time course experiment with sample groups 'Ctrl' and 'Sci' and the following timepoints: 0h, 2h, 8h, and 16h. 
+
+- Determine the sources explaining the variation represented by PC1 and PC2.
+- Do the sample groups separate well?
+- Do the replicates cluster together for each sample group?
+- Are there any outliers in the data?
+- Should we have any other concerns regarding the samples in the dataset?
+
+<img src="../img/PCA_example3.png" width="600">
+
+***
+
+### Hierarchical Clustering Heatmap
+
+Similar to PCA, hierarchical clustering is another, complementary method for identifying strong patterns in a dataset and potential outliers. The heatmap displays **the correlation of gene expression for all pairwise combinations of samples** in the dataset. Since the majority of genes are not differentially expressed, samples generally have high correlations with each other (values higher than 0.80). Samples below 0.80 may indicate an outlier in your data and/or sample contamination.  
+
+The hierarchical tree can indicate which samples are more similar to each other based on the normalized gene expression values. The color blocks indicate substructure in the data, and you would expect to see your replicates cluster together as a block for each sample group. Additionally, we expect to see samples clustered similar to the groupings observed in a PCA plot. 
+
+In the plot below, we would be a bit concerned about 'Wt_3' and 'KO_3' samples not clustering with the other replicates. We would want to explore the PCA to see if we see the same clustering of samples.
+
+<img src="../img/heatmap_example.png" width="500">
