@@ -76,13 +76,17 @@ Sample-level QC allows us to see how well our replicates cluster together, as we
 
 ### [Principal Component Analysis (PCA)](https://hbctraining.github.io/DGE_workshop/lessons/principal_component_analysis.html)
 
-Principal Component Analysis (PCA) is a technique used to emphasize variation and bring out strong patterns in a dataset. To explore the variation in the data, we could plot the expression values of each gene for each of our *n* samples against each other; we could do this pairwise or we could do this in *n*-dimensional space. If we have more than 3 samples, we cannot visualize in *n*-dimensional space. PCA offers a dimensionality reduction technique that finds the greatest amounts of variation in a dataset and assigns them to principal components.
+Principal Component Analysis (PCA) is a technique used to **emphasize variation** and bring out strong patterns in a dataset. To explore the variation in the data, we could **plot the expression values of each gene for each of our *n* samples against each other** in *n*-dimensional spaces. In the figure below we can see this if we had only two samples, but once we have more than 3 samples, we cannot visualize the samples in *n*-dimensional space.
+
+<img src="../img/PCA_2sample_genes.png" width="600">
+
+PCA provides a dimensionality reduction technique that finds the greatest amounts of variation in a dataset and assigns it to principal components.
 
 The principal component (PC) explaining the greatest amount of variation in the dataset is PC1, while the PC explaining the second greatest amount of variation in the data is PC2, and so on and so forth until PC*n*.
 
-PCA plots two PCs against each other, generally focusing on PC1 and PC2, which explain the largest amounts of variation in the data. **If two samples have similar levels of expression for the genes that contribute significantly to the variation represented by PC1, they will be plotted close together on the PC1 axis.** Therefore, we would expect that biological replicates to have similar scores (since the same genes are changing) and cluster together on PC1 and/or PC2, and the samples from different treatment groups to have different score. This is easiest to understand by visualizing example PCA plots.
+PCA plots two PCs against each other, generally focusing on PC1 and PC2, which explain the largest amounts of variation in the data. **If two samples have similar levels of expression for the genes that contribute significantly to the variation represented by PC1, they will be plotted close together on the PC1 axis.** Therefore, we would expect that biological replicates to have similar scores (since the same genes are changing in the same directions) and cluster together on PC1 and/or PC2, and the samples from different treatment groups to have different score. **This is easiest to understand by visualizing example PCA plots.**
 
-In the plot below we can see our samplegroups separate on PC1, this is generally what we hope for. PC1 explains 89% of the variation in the data, so it's likely that this variation is due to differences between our samplegroups, EN (pink) and ENR (blue).
+In the PCA plot below we can see our samplegroups separate on PC1, this is generally what we hope for. PC1 explains 89% of the variation in the data, so it's likely that this variation is due to differences between our samplegroups, EN (pink) and ENR (blue).
 
 <img src="../img/PCA_example4.png" width="400">
 
@@ -132,3 +136,17 @@ The hierarchical tree can indicate which samples are more similar to each other 
 In the plot below, we would be a bit concerned about 'Wt_3' and 'KO_3' samples not clustering with the other replicates. We would want to explore the PCA to see if we see the same clustering of samples.
 
 <img src="../img/heatmap_example.png" width="500">
+
+***
+**Exercise**
+
+The figure below was generated from an experiment with sample groups 'Mov10_oe', 'Irrel_kd' and 'Mov10_kd'. 
+
+- Do the sample groups separate well?
+- Do the replicates cluster together for each sample group?
+- Are there any outliers in the data?
+- Should we have any other concerns regarding the samples in the dataset?
+
+![heatmap1](../img/pheatmap-1.png)
+
+***
