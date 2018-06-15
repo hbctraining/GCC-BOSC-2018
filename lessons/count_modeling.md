@@ -70,6 +70,10 @@ However, in practice a large number of replicates can be either hard to obtain (
 > **NOTE:** If we use the Poisson this will underestimate variability leading to an increase in false positive DE genes.
 
 
+---
+
+*This lesson has been developed by members of the teaching team at the [Harvard Chan Bioinformatics Core (HBC)](http://bioinformatics.sph.harvard.edu/). These are open access materials distributed under the terms of the [Creative Commons Attribution license](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.*
+
 
 
 
