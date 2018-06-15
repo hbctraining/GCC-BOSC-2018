@@ -60,7 +60,7 @@ In contrast to RPKM/FPKM, TPM-normalized counts normalize for both sequencing de
 
 Tool-specific metrics of normalization are often the best methods for comparing counts between samples. These methods account for the composition of the sample, so that the normalization factors are not skewed by outlier or differentially expressed genes.
 
->**NOTE:** EdgeR's **TMM method** of normalization is recommended for both **all comparisons**
+>**NOTE:** EdgeR's **TMM method** of normalization is recommended for **all comparisons** (within and between samples).
 
 # Quality Control
 
