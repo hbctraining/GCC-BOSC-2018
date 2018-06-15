@@ -96,7 +96,29 @@ We can use other variables **present in our metadata** to explore other causes o
 
 We can determine that the 5% of variation in the data represented by PC2 is due to variation between individuals in this paired design example.
 
-In the next example, we can visualize the samples clustering by genotype on PC2 (13% variance). **If we saw one of the red samples below clustering with the blue samples (or vice versa), we might be worried about a mix-up. It would give us sufficient cause to remove that sample as an outlier and/or do some follow-up tests in the lab.**
+In the next example, the metadata for the experiment are displayed below. The main condition of interest is `treatment`.
+
+<img src="../img/example_metadata.png" width="400">
+
+When visualizing on PC1 and PC2, we don't see the samples separate by `treatment`. To explore the sources of variation in the data, we explore the other factors.
+
+The `cage` factor does not seem to explain the variation on PC1 or PC2.
+
+<img src="../img/example_PCA_cage.png" width="400">
+
+While the `sex` factor appears to separate samples on PC2.
+
+<img src="../img/example_PCA_sex.png" width="400">
+
+The `strain` factor explains the variation on PC1.
+
+<img src="../img/example_PCA_strain.png" width="400">
+
+Since we can identify the likely sources of variation driving PC1 and PC2, we can account for that variation in the model and regress it out. We continue to look for variation in our data due to treatment.
+
+<img src="../img/example_PCA_treatmentPC3.png" width="400">
+
+In the final example, we can visualize the samples clustering by genotype on PC2 (13% variance). **If we saw one of the red samples below clustering with the blue samples (or vice versa), we might be worried about a mix-up. It would give us sufficient cause to remove that sample as an outlier and/or do some follow-up tests in the lab.**
 
 <img src="../img/PCA_example1.png" width="400">
 
