@@ -9,10 +9,10 @@ The counts of mapped reads for each gene is proportional to the expression of RN
 The main factors often considered during normalization are:
  
  - **Sequencing depth:** Accounting for sequencing depth is necessary for comparison of gene expression between samples. In the example below, each gene appears to have doubled in expression in sample A, however this is a consequence of sample A having double the sequencing depth. 
- 
-	>***NOTE:** In the figures below, each pink and green rectangle represents a read aligned to a gene. Reads connected by dashed lines connect a read spanning an intron.*
- 
+
     <img src="../img/normalization_methods_depth.png" width="400">
+  
+	>***NOTE:** In the figure above, each pink and green rectangle represents a read aligned to a gene. Reads connected by dashed lines connect a read spanning an intron.*
  
  - **Gene length:** Accounting for gene length is necessary for comparing expression between different genes within the same sample. The number of reads mapped to a longer gene can appear to have equal count/expression as a shorter gene that is more highly expressed. 
  
