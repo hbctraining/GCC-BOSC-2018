@@ -50,7 +50,7 @@ Using RPKM/FPKM normalization, the total number of RPKM/FPKM normalized counts f
 
 For example, in the table above, SampleA has a greater proportion of counts associated with XCR1 (5.5/1,000,000) than does sampleB (5.5/1,500,000) even though the RPKM count values are the same. Therefore, we cannot directly compare the counts for XCR1 (or any other gene) between sampleA and sampleB because the total number of normalized counts are different between samples. 
 
-### TPM (recommended for within sample comparisons or EdgeR's TMM method) 
+### TPM (recommended for within sample comparisons) 
 
 In contrast to RPKM/FPKM, TPM-normalized counts normalize for both sequencing depth and gene length, but have the same total TPM-normalized counts per sample. Therefore, the normalized count values are comparable both between and within samples.
 
@@ -59,6 +59,8 @@ In contrast to RPKM/FPKM, TPM-normalized counts normalize for both sequencing de
 ### Tool-specific metrics (recommended for between sample comparisons)
 
 Tool-specific metrics of normalization are often the best methods for comparing counts between samples. These methods account for the composition of the sample, so that the normalization factors are not skewed by outlier or differentially expressed genes.
+
+>**NOTE:** EdgeR's **TMM method** of normalization is recommended for both **all comparisons**
 
 # Quality Control
 
