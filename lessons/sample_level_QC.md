@@ -8,15 +8,17 @@ The counts of mapped reads for each gene is proportional to the expression of RN
 
 The main factors often considered during normalization are:
  
- - **Sequencing depth:** Accounting for sequencing depth is necessary for comparison of gene expression between samples. In the example below, each gene appears to have doubled in expression in sample 2, however this is a consequence of sample 2 having double the sequencing depth.
+ - **Sequencing depth:** Accounting for sequencing depth is necessary for comparison of gene expression between samples. In the example below, each gene appears to have doubled in expression in sample A, however this is a consequence of sample A having double the sequencing depth. ***Note:** In the figures below, each pink and green rectangle represents a read aligned to a gene. Reads connected by dashed lines connect a read spanning an intron.*
  
     <img src="../img/normalization_methods_depth.png" width="400">
  
  - **Gene length:** Accounting for gene length is necessary for comparing expression between different genes within the same sample. The number of reads mapped to a longer gene can appear to have equal count/expression as a shorter gene that is more highly expressed. 
  
-    <img src="../img/length_of_gene.png" width="400">
+    <img src="../img/normalization_methods_length.png" width="400">
  
  - **RNA composition:** A few highly differentially expressed genes can skew some types of normalization methods. Accounting for RNA composition is recommended for comparison of expression between samples, and is particularly important when performing differential expression analyses [[1](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-10-r106)]
+    
+    <img src="../img/normalization_methods_composition.png" width="400">
     
 While normalization is essential for differential expression analyses, it is also necessary for exploratory data analysis, visualization of data, and whenever you are exploring or comparing counts between or within samples.
  
