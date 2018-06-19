@@ -13,10 +13,10 @@ Approximate time: 30 minutes
 * Tools for gene-level differential expression analysis 
 	* DESeq2
 	* edgeR
-* Modeling transcript level data with sleuth
-	*Bootstrap and technical variation
-* Hypothesis testing for pairwise comparisons (e.g Wald test)
-* Hypothesis testing for multiple levels/time series (e.g. LRT)
+* Tools for transcript-level differential expression analysis 
+* Hypothesis testing
+	* pairwise comparisons
+	* multiple levels/time series 
 
 
 ## Characteristics of RNA-seq count data
@@ -117,26 +117,29 @@ In addition to performing differential expression analysis of transcripts, the S
 ***NOTE:*** *Kallisto is distributed under a non-commercial license, while Sailfish and Salmon are distributed under the [GNU General Public License, version 3](http://www.gnu.org/licenses/gpl.html).*
 
 
-## Hypothesis testing for pairwise comparisons
+## Hypothesis testing
 
 With differential expression analysis, we are looking for genes/transcripts that change in expression between two or more groups, for example:
 
 - case vs. control
 - treated vs. untreated
+- series of time points
 
-In the example below, we have the groups fetal brain samples versus postnatal. **Why does it not work to identify differentially expressed genes by ranking the genes by how different they are between the two groups (based on fold change values)?**
+In the example below, we have two sample groups: fetal brain samples and postnatal brain samples. **Why does it not work to identify differentially expressed genes by ranking the genes by how different they are between the two groups (based on fold change values)?**
 
 <img src="../img/foldchange_heatmap.png" width="200">
 
-Because, more often than not there is much more going on with your data than what you are anticipating. Genes that vary in expression level between samples is a consequence of not only the experimental variables of interest but also due to extraneous sources. The goal of differential expression analysis to determine the relative role of these effects, and to separate the “interesting” from the “uninteresting”.
+Because, more often than not **there is much more going on with your data than what you are anticipating**. The goal of differential expression analysis to determine the relative role of these effects, and to separate the “interesting” from the “uninteresting”.
 
 <img src="../img/de_variation.png" width="500">
 
-The count data for each gene is fit to the model (taking into account the "uninteresting" the best we can) and coefficients are estimated. These coefficients are then used as input to hypothesis testing.
 
-First, for each gene we set up a **null hypothesis**, which in our case is would be that **there is no differential expression across the two sample groups**. Notice that we can do this without observing any data, because it is based on a thought experiment. We then use a statistical test to determine if based on the observed data, the null hypothesis is true. 
+First, for each gene we set up a **null hypothesis**, which in our case is that **there is no differential expression across the two sample groups**. Notice that we can do this without observing any data, because it is based on a thought experiment. Second, we **use a statistical test** to determine if based on the observed data, **the null hypothesis is true**. 
 
-For RNA-seq, the Wald test is commonly used for hypothesis testing. The coefficents for each sample group are used to test differences between two groups. A test statistic is computed along with a probability that a test statistic at least as extreme as the observed value were selected at random. This probability is called the p-value of the test. If the p-value is small we reject the null hypothesis and state that there is evidence against the null (i.e. the gene is differntialluy expressed.  
+### Pairwise comparisons using the Wald test
+
+For RNA-seq, the Wald test is commonly used for hypothesis testing. Based on the model fit (taking into account the "uninteresting" the best we can), **coefficients** are estimated for each gene and are **used to test differences between two groups.** A Wald test statistic is computed along with a probability that a test statistic at least as extreme as the observed value were selected at random. This probability is called the p-value of the test. **If the p-value is small we reject the null hypothesis** and state that there is evidence against the null **(i.e. the gene is differentially expressed)**.  
+
 
 ## Hypothesis testing for multiple levels/time series 
 
