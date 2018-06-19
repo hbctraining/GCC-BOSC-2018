@@ -17,7 +17,7 @@ Approximate time: 30 minutes
 * Hypothesis testing
 	* pairwise comparisons
 	* multiple levels/time series 
-
+* Multiple test correction
 
 ## Characteristics of RNA-seq count data
 
