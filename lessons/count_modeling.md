@@ -147,9 +147,24 @@ For experimental designs in which you have more than two sample groups, other st
 
 <img src="../img/mov10_clusters.png" width="600">
 
-In the DESeq2 package, the Likelihood Ratio Test (LRT) is implemented for the analayis of data in which there are more than two sample groups. This type of test can be especially useful in analyzing time course experiments. The LRT requires the user to identify a full model (the main effect plus all covariates) and a reduced model (the full mode without the main effect variable). The full model is then compared to the reduced model using and Analysis of Deviance (ANODEV), which is essentially  testing whether the term(s) removed in the 'reduced' model explains a significant amount of variation in the data.
+In the **DESeq2** package, the **Likelihood Ratio Test (LRT)** is implemented for the analayis of data in which there are more than two sample groups. This type of test can be especially useful in analyzing time course experiments. The LRT requires the user to identify a full model (the main effect plus all covariates) and a reduced model (the full mode without the main effect variable). The full model is then compared to the reduced model using and Analysis of Deviance (ANODEV), which is essentially  **testing whether the term(s) removed in the 'reduced' model explains a significant amount of variation in the data.**
 
-Generally, this test will result in a larger number of genes than the individual pair-wise comparisons. While the LRT is a test of significance for differences of any level of the factor, one should not expect it to be exactly equal to the union of sets of genes using Wald tests (although we do expect a majority overlap).
+> **NOTE:** Generally, this test will result in a larger number of genes than the individual pair-wise comparisons. While the LRT is a test of significance for differences of any level of the factor, one should not expect it to be exactly equal to the union of sets of genes using Wald tests (although we do expect a majority overlap).
+
+## Multiple test correction
+
+From a statistical point of view, for each gene we are testing the null hypothesis that there is no differential expression across the sample groups. This may represent thousands of tests. The more genes we test, the more we inflate the false positive rate. **This is the multiple testing problem.** 
+
+For example, the p-value with a significance cut-off of 0.05 means there is a 5% chance of error. If we test 20,000 genes for differential expression, at p < 0.05 we would expect to find 1,000 genes by chance. If we found 3000 genes to be differentially expressed total, roughly one third of our genes are false positives. We would not want to sift through our "significant" genes to identify which ones are true positives.
+
+There are a few commonly used approaches to correcting for this problem:
+
+- **Bonferroni:** The adjusted p-value is calculated by: p-value * m (m = total number of tests). **This is a very conservative approach with a high probability of false negatives**, so is generally not recommended.
+- **FDR/Benjamini-Hochberg:** Benjamini and Hochberg (1995) defined the concept of FDR and created an algorithm to control the expected FDR below a specified level given a list of independent p-values. **An interpretation of the BH method for controlling the FDR is implemented in DESeq2 in which we rank the genes by p-value, then multiply each ranked p-value by m/rank**.
+- **Q-value / Storey method:** The minimum FDR that can be attained when calling that feature significant. For example, if gene X has a q-value of 0.013 it means that 1.3% of genes that show p-values at least as small as gene X are false positives
+
+
+> **So what does FDR < 0.05 mean?** The most commonly used method is the FDR. By setting the FDR cutoff to < 0.05, we're saying that the proportion of false positives we expect amongst our differentially expressed genes is 5%. For example, if you call 500 genes as differentially expressed with an FDR cutoff of 0.05, you expect 25 of them to be false positives.
 
 
 
