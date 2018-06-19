@@ -141,7 +141,9 @@ First, for each gene we set up a **null hypothesis**, which in our case is that 
 For RNA-seq, the Wald test is commonly used for hypothesis testing. Based on the model fit (taking into account the "uninteresting" the best we can), **coefficients** are estimated for each gene and are **used to test differences between two groups.** A Wald test statistic is computed along with a probability that a test statistic at least as extreme as the observed value were selected at random. This probability is called the p-value of the test. **If the p-value is small we reject the null hypothesis** and state that there is evidence against the null **(i.e. the gene is differentially expressed)**.  
 
 
-## Hypothesis testing for multiple levels/time series 
+### Likelihood Ratio Test (LRT) for multiple levels/time series
+
+
 
 
 
