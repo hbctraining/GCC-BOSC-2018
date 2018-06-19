@@ -15,7 +15,7 @@ Approximate time: 30 minutes
 	* edgeR
 * Modeling transcript level data with sleuth
 	*Bootstrap and technical variation
-* Hypothesis testing for pairwise comparisons (e.g wald test)
+* Hypothesis testing for pairwise comparisons (e.g Wald test)
 * Hypothesis testing for multiple levels/time series (e.g. LRT)
 
 
@@ -91,9 +91,9 @@ Even as new methods are continuously being developed, there are a select few tha
 **[Limma-Voom](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2014-15-2-r29)** is another set of tools often used together for DE analysis. The Limma package was initially developed for mircroarray data where data is normally distributed. The `voom` functionality was introduced more recently to allow for the analysis of RNA-seq count data. Essentially weights are computed and applied to the count matrix, transforming data such that it is normally distributed and Limma functions can be applied. bThis method can be less sensitive for small sample sizes, and is recommended when the number of biological replicates per group grows large (> 20). 
 
 
-## Modeling transcript-level data with Sleuth
+## Tools for transcript-level differential expression analysis
 
-Until this point we have focused on looking for expression changes at the gene-level. However, if you are interested in looking at **splice isoform expression changes between groups** the previous methods (i.e DESeq2) will not work. To demonstrate how to identify transcript-level differential expression we will describe a tool called **Sleuth**.
+Until this point we have focused on looking for expression changes at the gene-level. If you are interested in looking at **splice isoform expression changes between groups**, not that the previous methods (i.e DESeq2) will not work. To demonstrate how to identify transcript-level differential expression we will describe a tool called **Sleuth**.
 
 ## What is Sleuth?
 
@@ -116,6 +116,29 @@ In addition to performing differential expression analysis of transcripts, the S
 
 ***NOTE:*** *Kallisto is distributed under a non-commercial license, while Sailfish and Salmon are distributed under the [GNU General Public License, version 3](http://www.gnu.org/licenses/gpl.html).*
 
+
+## Hypothesis testing for pairwise comparisons
+
+With differential expression analysis, we are looking for genes/transcripts that change in expression between two or more groups, for example:
+
+- case vs. control
+- treated vs. untreated
+
+In the example below, we have the groups fetal brain samples versus postnatal. **Why does it not work to identify differentially expressed genes by ranking the genes by how different they are between the two groups (based on fold change values)?**
+
+<img src="../img/foldchange_heatmap.png" width="200">
+
+Because, more often than not there is much more going on with your data than what you are anticipating. Genes that vary in expression level between samples is a consequence of not only the experimental variables of interest but also due to extraneous sources. The goal of differential expression analysis to determine the relative role of these effects, and to separate the “interesting” from the “uninteresting”.
+
+<img src="../img/de_variation.png" width="500">
+
+The count data for each gene is fit to the model (taking into account the "uninteresting" the best we can) and coefficients are estimated. These coefficients are then used as input to hypothesis testing.
+
+First, for each gene we set up a **null hypothesis**, which in our case is would be that **there is no differential expression across the two sample groups**. Notice that we can do this without observing any data, because it is based on a thought experiment. We then use a statistical test to determine if based on the observed data, the null hypothesis is true. 
+
+For RNA-seq, the Wald test is commonly used for hypothesis testing. The coefficents for each sample group are used to test differences between two groups. A test statistic is computed along with a probability that a test statistic at least as extreme as the observed value were selected at random. This probability is called the p-value of the test. If the p-value is small we reject the null hypothesis and state that there is evidence against the null (i.e. the gene is differntialluy expressed.  
+
+## Hypothesis testing for multiple levels/time series 
 
 
 
