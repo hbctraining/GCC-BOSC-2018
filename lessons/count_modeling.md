@@ -93,6 +93,30 @@ Even as new methods are continuously being developed, there are a select few tha
 
 ## Modeling transcript-level data with Sleuth
 
+Until this point we have focused on looking for expression changes at the gene-level. However, if you are interested in looking at **splice isoform expression changes between groups** the previous methods (i.e DESeq2) will not work. To demonstrate how to identify transcript-level differential expression we will describe a tool called **Sleuth**.
+
+## What is Sleuth?
+
+[Sleuth](http://pachterlab.github.io/sleuth/) is a fast, lightweight tool that uses transcript abundance estimates output from **pseudo-alignment** algorithms that use **bootstrap sampling**, such as Sailfish, Salmon, and Kallisto, to perform differential expression analysis of gene isoforms. 
+
+To analyze the differential expression of gene isoforms, it is expected that RNA-Seq reads will often align to multiple isoforms of the same gene. Therefore, **multimapping reads cannot be ignored** to properly determine abundances of gene isoforms. 
+
+Due to the statistical procedure required to assign reads to gene isoforms, in addition to the random processes underlying RNA-Seq, there will be **technical variability in the abundance estimates** output from the pseudo-alignment tool [[2](https://rawgit.com/pachterlab/sleuth/master/inst/doc/intro.html), [3](https://www.nature.com/articles/nmeth.4324)]. Therefore, **we would need technical replicates to distinguish technical variability from the biological variability**.
+
+Sleuth accounts for this technical variability by using **bootstraps as a proxy for technical replicates**, which are used to model the technical variability in the abundance estimates. Bootstrapping essentially **calculates the abundance estimates for all genes using a different sub-sample of reads** during each round of bootstrapping. The variation in the abundance estimates output from each round of bootstrapping is used for the estimation of the technical variance for each gene. 
+
+<p align="center">
+  <img src="../img/sleuth_tech_var.png" width="600"/>
+</p>
+
+_Adapted from: Nature Methods **14**, 687–690 (2017)_
+
+
+In addition to performing differential expression analysis of transcripts, the Sleuth tool also provides an html interface allowing exploration of the data and differential expression results interactively. More information about the theory/process for sleuth is available in the [Nature Methods paper](https://www.nature.com/articles/nmeth.4324), this [blogpost](https://liorpachter.wordpress.com/2015/08/17/a-sleuth-for-rna-seq/) and step-by-step tutorials are available on the [sleuth website](https://pachterlab.github.io/sleuth/walkthroughs).
+
+***NOTE:*** *Kallisto is distributed under a non-commercial license, while Sailfish and Salmon are distributed under the [GNU General Public License, version 3](http://www.gnu.org/licenses/gpl.html).*
+
+
 
 
 
