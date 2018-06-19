@@ -16,7 +16,7 @@ Approximate time: 15 minutes
 
 ## Strategies for bulk RNA-seq data analysis
 
-<img src="../img/strategies.png" width="600">
+<img src="../img/strategies.png">
 
 
 ## Differential “gene” expression 
