@@ -10,7 +10,7 @@ Approximate time: 30 minutes
 
 * Explain why negative binomial distribution is used to model RNA-seq count data
 * The mean-variance relationship and how that changes as we add replicates
-* Tools for differential expression analysis 
+* Tools for gene-level differential expression analysis 
 	* DESeq2
 	* edgeR
 * Modeling transcript level data with sleuth
@@ -47,11 +47,16 @@ Count data in general can be modeled with various distributions:
 
 2. **Poisson distribution:** For use, when **the number of cases is very large (i.e. people who buy lottery tickets), but the probability of an event is very small (probability of winning)**. The Poisson is similar to the binomial, but is based on continuous events. Appropriate for data where mean == variance. 
 
+3. **Negative binomial distribution:** An approximation of the Poisson, but has an additional parameter that adjusts the variance independently from the mean.
+
 > [Details provided by Rafael Irizarry in the EdX class.](https://youtu.be/fxtB8c3u6l8)
 
-**With RNA-Seq data, a very large number of RNAs are represented and the probability of pulling out a particular transcript is very small**. Thus, it would be an appropriate situation to use the Poisson distribution. However, a unique property of this distribution is that the mean == variance. 
 
-#### Mean versus Variance
+#### So what do we use for RNA-seq count data?
+
+With RNA-Seq data, **a very large number of RNAs are represented and the probability of pulling out a particular transcript is very small**. Thus, it would be an appropriate situation to use the Poisson or Negative binomial distribution. Choosing one over the other **will depend on the relationship between mean and variance in our data**.
+
+## Mean versus Variance
 
 In the figure below we have plotted the mean against the variance for three replicate samples in a study. Each data point represents a gene and the red line represents x = y. 
 
@@ -59,15 +64,36 @@ In the figure below we have plotted the mean against the variance for three repl
 
 There's two things to note here:
 
-1. The variance across replicates tends to be greater than the mean (red line), especially for genes with large mean expression levels. 
-2. For the lowly expressed genes we se quite a bit of scatter. We usually refer to this as "heteroscedasticity". That is, for a given expression level we observe a lot of variation in the amount of variance. 
+1. The **variance across replicates tends to be greater than the mean** (red line), especially for genes with large mean expression levels. 
+2. For the **lowly expressed genes** we see quite a bit of scatter. We usually refer to this as "heteroscedasticity". That is, for a given expression level we observe **a lot of variation in the amount of variance**. 
 
-*This is a good indication that our data do not fit the Poisson distribution.* If the proportions of mRNA stayed exactly constant between the biological replicates for each sample class, we could expect Poisson distribution (where mean == variance). Alternatively, if we continued to add more replicates (i.e. > 20) we should eventually see the scatter start to reduce and the high expression data points move closer to the red line. So in theory, of we had enough replicates we could use the Poisson.
+*This is a good indication that our data do not fit the Poisson distribution.* If the proportions of mRNA stayed exactly constant between the biological replicates for a sample group, we could expect Poisson distribution (where mean == variance). Alternatively, if we continued to add more replicates (i.e. > 20) we should eventually see the scatter start to reduce and the high expression data points move closer to the red line. So in theory, of we had enough replicates we could use the Poisson.
 
 However, in practice a large number of replicates can be either hard to obtain (depending on how samples are obtained) and/or can be unaffordable. It is more common to see datasets with only a handful of replicates (~3-5) and reasonable amount of variation between them. The model that fits best, given this type of variability between replicates, is the Negative Binomial (NB) model. Essentially, **the NB model is a good approximation for data where the mean < variance**, as is the case with RNA-Seq count data.
 
-
 > **NOTE:** If we use the Poisson this will underestimate variability leading to an increase in false positive DE genes.
+
+
+## Tools for gene-level differential expresssion analysis
+
+There are a number of software packages that have been developed for differential expression analysis of RNA-seq data. 
+Many studies describing comparisons between these methods show that while there is some concordance in the genes that are identified as differentially expressed, there is also much variability between tools. **Additionally, there is no one method that performs optimally under all conditions ([Soneson and Dleorenzi, 2013](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-14-91)).**
+
+
+![deg1](../img/deg_methods1.png) 
+
+![deg1](../img/deg_methods2.png) 
+
+Even as new methods are continuously being developed, there are a select few that are generally recommended as best practice. Here, we list and describe three of those: DESeq2, edgeR and Limma-voom.  
+
+**[DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)** and **[EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)** both use the negative binomial model, employ similar methods, and typically, yield similar results. They are both pretty stringent, and have a good balance between sensitivity and specificity (reducing both false positives and false negatives). DESeq2 does have soem extra features which implement various levels of filtering and shrinkage of fold changes to account for the heteroscedasticity described above.
+
+**[Limma-Voom](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2014-15-2-r29)** is another set of tools often used together for DE analysis. The Limma package was initially developed for mircroarray data where data is normally distributed. The `voom` functionality was introduced more recently to allow for the analysis of RNA-seq count data. Essentially weights are computed and applied to the count matrix, transforming data such that it is normally distributed and Limma functions can be applied. bThis method can be less sensitive for small sample sizes, and is recommended when the number of biological replicates per group grows large (> 20). 
+
+
+## Modeling transcript-level data with Sleuth
+
+
 
 
 ---
