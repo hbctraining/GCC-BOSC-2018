@@ -138,13 +138,18 @@ First, for each gene we set up a **null hypothesis**, which in our case is that 
 
 ### Pairwise comparisons using the Wald test
 
-For RNA-seq, the Wald test is commonly used for hypothesis testing. Based on the model fit (taking into account the "uninteresting" the best we can), **coefficients** are estimated for each gene and are **used to test differences between two groups.** A Wald test statistic is computed along with a probability that a test statistic at least as extreme as the observed value were selected at random. This probability is called the p-value of the test. **If the p-value is small we reject the null hypothesis** and state that there is evidence against the null **(i.e. the gene is differentially expressed)**.  
+For RNA-seq, the Wald test is commonly used for hypothesis testing when comparing two groups. Based on the model fit (taking into account the "uninteresting" the best we can), **coefficients** are estimated for each gene/transcript and are **used to test differences between two groups.** A Wald test statistic is computed along with a probability that a test statistic at least as extreme as the observed value were selected at random. This probability is called the p-value of the test. **If the p-value is small we reject the null hypothesis** and state that there is evidence against the null **(i.e. the gene is differentially expressed)**.  
 
 
 ### Likelihood Ratio Test (LRT) for multiple levels/time series
 
+For experimental designs in which you have more than two sample groups, other statistical tests exist. For these types of comparisons, we are interested in **identifying genes that show any expression change across the sample groups that we are investigating**. Once we have identified those significant genes, **post-hoc clustering** can be applied to find groups of genes that share similar expression profiles.
 
+<img src="../img/mov10_clusters.png" width="600">
 
+In the DESeq2 package, the Likelihood Ratio Test (LRT) is implemented for the analayis of data in which there are more than two sample groups. This type of test can be especially useful in analyzing time course experiments. The LRT requires the user to identify a full model (the main effect plus all covariates) and a reduced model (the full mode without the main effect variable). The full model is then compared to the reduced model using and Analysis of Deviance (ANODEV), which is essentially  testing whether the term(s) removed in the 'reduced' model explains a significant amount of variation in the data.
+
+Generally, this test will result in a larger number of genes than the individual pair-wise comparisons. While the LRT is a test of significance for differences of any level of the factor, one should not expect it to be exactly equal to the union of sets of genes using Wald tests (although we do expect a majority overlap).
 
 
 
