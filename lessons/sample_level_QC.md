@@ -110,11 +110,11 @@ In this next example, the metadata for the experiment is displayed below. The ma
 
 <img src="../img/example_metadata.png" width="400">
 
-When visualizing on PC1 and PC2, we don't see the samples separate by `treatment`. 
+When visualizing on PC1 and PC2, we don't see the samples separate by `treatment`, so we decide to explore other sources of variation present in the data that are included in our metadata table. 
 
 <img src="../img/example_PCA_treatmentPC1.png" width="400">
 
-To explore the sources of variation in the data, we explore the other factors. Next we explore `cage`, but the `cage` factor does not seem to explain the variation on PC1 or PC2.
+We start with the factor `cage`, but the `cage` factor does not seem to explain the variation on PC1 or PC2.
 
 <img src="../img/example_PCA_cage.png" width="400">
 
