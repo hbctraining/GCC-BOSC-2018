@@ -29,25 +29,17 @@ The main factors often considered during normalization are:
 ### Common normalization methods
 
 Several common normalization methods exist to account for these differences:
-
-- **CPM (counts per million):** counts scaled by total number of reads. This method accounts for sequencing depth only.
-- **TPM (transcripts per kilobase million):** counts per length of transcript (kb) per million reads mapped. This method accounts for both sequencing depth and gene length.
-- **RPKM/FPKM (reads/fragments per kilobase of exon per million reads/fragments mapped):** similar to TPM, as this method also accounts for both sequencing depth and gene length as well; however, it is **not recommended**.
-- **Tool-specific metrics for normalization:** 
-	- DESeq2 uses a median of ratios method, which accounts for sequencing depth and RNA composition [[1](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-10-r106)]. 
-	- EdgeR uses a trimmed mean of M values (TMM) method that accounts for sequencing depth, RNA composition, and gene length [[2](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25)]
 	
-	| Normalization method | Description | Accounted factors | Recommendations for use |
-	| ---- | ---- | ---- | ---- |
-	| **CPM (counts per million)** | counts scaled by total number of reads | sequencing depth | comparison between replicates of the same samplegroup |
-	| **TPM (transcripts per kilobase million)** | counts per length of transcript (kb) per million reads mapped | sequencing depth and gene length | abundance comparisons of genes between and within samples of the same sample group, not for DE analysis |
-	| **RPKM/FPKM (reads/fragments per kilobase of exon per million reads/fragments mapped)** | similar to TPM | sequencing depth and gene length | comparisons of gene abundance between genes within a sample, not for between sample comparisons or DE analysis |
-	| **DESeq2's median of ratios method** | counts divided by sample-specific size factors determined by median ratio of gene counts relative to geometric mean per gene | sequencing depth and RNA composition | abundance comparisons of genes between samples and for DE analysis |
-	| **EdgeR's trimmed mean of M values (TMM) method** | uses a weighted trimmed mean of the log expression ratios to determine ratio estimate of RNA production between samples | sequencing depth, RNA composition, and gene length | abundance comparisons of genes between and within samples and for DE analysis |
+| Normalization method | Description | Accounted factors | Recommendations for use |
+| ---- | ---- | ---- | ---- |
+| **CPM (counts per million)** | counts scaled by total number of reads | sequencing depth | gene count comparisons between replicates of the same samplegroup |
+| **TPM (transcripts per kilobase million)** | counts per length of transcript (kb) per million reads mapped | sequencing depth and gene length | gene count comparisons between samples of the same sample group, not for DE analysis |
+| **RPKM/FPKM (reads/fragments per kilobase of exon per million reads/fragments mapped)** | similar to TPM | sequencing depth and gene length | gene count comparisons between genes within a sample, not for between sample comparisons or DE analysis |
+| **DESeq2's median of ratios method** [[1](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-10-r106)] | counts divided by sample-specific size factors determined by median ratio of gene counts relative to geometric mean per gene | sequencing depth and RNA composition | gene count comparisons between samples and for DE analysis |
+| **EdgeR's trimmed mean of M values (TMM) method** [[2](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25)] | uses a weighted trimmed mean of the log expression ratios between samples | sequencing depth, RNA composition, and gene length | abundance comparisons of genes between and within samples and for DE analysis |
 	
 	
-	
- ### RPKM/FPKM (not recommended)
+ ### RPKM/FPKM (not recommended for between sample comparisons)
  
 While TPM and RPKM/FPKM normalization methods both account for sequencing depth and gene length, RPKM/FPKM are not recommended. **The reason  is that the normalized count values output by the RPKM/FPKM method are not comparable between samples.** 
 
