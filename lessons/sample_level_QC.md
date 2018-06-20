@@ -178,3 +178,15 @@ The figure below was generated from an experiment with sample groups 'Mov10_oe',
 ![heatmap1](../img/pheatmap-1.png)
 
 ***
+
+## Gene-level QC
+
+In addition to examining how well the samples/replicates cluster together, there are a few more QC steps. Prior to differential expression analysis it is beneficial to omit genes that have little or no chance of being detected as differentially expressed. This will increase the power to detect differentially expressed genes. The genes omitted fall into three categories:
+
+- Genes with zero counts in all samples
+- Genes with an extreme count outlier
+- Genes with a low mean normalized counts
+
+<img src="../img/gene_filtering.png" width="600">
+
+**DESeq2 will perform this filtering by default; however other DE tools, such as EdgeR will not.**  Filtering is a necessary step, even if you are using limma-voom and/or edgeR's quasi-likelihood methods. Be sure to follow pre-filtering steps when these tools, as outlined in their user guides found on Bioconductor as they generally perform much better. 
