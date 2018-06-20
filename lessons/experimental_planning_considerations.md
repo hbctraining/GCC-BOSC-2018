@@ -58,6 +58,10 @@ Replicates are almost always preferred to greater sequencing depth for bulk RNA-
   
 - **Other types of RNA analyses (intron retention, small RNA-Seq, etc.):** 
   
-  - Different recommendations depending on the analysis
+  - Different recommendations depending on the analysis.
   
   - Almost always more biological replicates are better!
+  
+  ## Confounding
+  
+  
