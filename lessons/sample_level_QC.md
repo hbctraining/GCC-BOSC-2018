@@ -96,11 +96,11 @@ In the PCA plot below we can see our samplegroups, *EN* (pink) and *ENR* (blue),
 
 <img src="../img/PCA_example4.png" width="400">
 
-We can use other variables **present in our metadata** to explore other causes of the variation in our data:
+We can use other variables **present in our metadata** to explore other causes of the variation in our data, such as `individual` in this paired-design experiment:
 
 <img src="../img/PCA_example5.png" width="400">
 
-We can determine that the 5% of variation in the data represented by PC2 is due to variation between individuals in this paired design example.
+We can determine that the 5% of variation in the data represented by PC2 is due to variation between individuals.
 
 In the next example, the metadata for the experiment are displayed below. The main condition of interest is `treatment`.
 
