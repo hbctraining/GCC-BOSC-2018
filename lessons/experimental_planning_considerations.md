@@ -10,7 +10,7 @@ These important considerations include:
 
 We will go over each of these considerations in detail, discussing best practice and optimal design.
 
-## Replicates
+### Replicates
 
 Experimental replicates can be performed as **technical replicates** or **biological replicates**. 
 
@@ -30,7 +30,7 @@ As the figure above illustrates, **biological replicates are of greater importan
 
 Replicates are almost always preferred to greater sequencing depth for bulk RNA-Seq. However, guidelines depend on the experiment performed and the desired analysis. Below we list some general guidelines for replicates and sequencing depth to help with experimental planning:
 
-- **General differential gene expression:**
+- **General gene-level differential expression:**
 
   - ENCODE guidelines suggest 30 million SE reads per sample (stranded).
   
@@ -38,3 +38,20 @@ Replicates are almost always preferred to greater sequencing depth for bulk RNA-
 
   - Spend money on more biological replicates, if possible.
 
+- **Gene-level differential expression with detection of lowly-expressed genes:**
+  
+  - Similarly benefits from replicates more than sequencing depth.
+
+  - Sequence deeper with at least 30-60 million reads depending on level of expression (start with 30 million with a good number of replicates). 
+  
+- **Isoform-level differential expression:**
+
+  - More depth (> 60 million reads per sample) and paired-end reads are suggested.
+
+  - Choose biological replicates over paired/deeper sequencing.
+
+  - Perform careful QC of RNA quality. Be careful to use high quality preparation methods and restrict analysis to high quality RIN # samples.  
+  
+- Other types of RNA analyses (intron retention, small RNA-Seq, etc.) will have different suggestions. 
+
+  - Almost always more biological replicates are better!
