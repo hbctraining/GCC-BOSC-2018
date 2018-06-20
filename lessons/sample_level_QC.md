@@ -18,10 +18,10 @@ The main factors often considered during normalization are:
  
     <img src="../img/normalization_methods_length.png" width="200">
  
- - **RNA composition:** A few highly differentially expressed genes can skew some types of normalization methods. Accounting for RNA composition is recommended for comparison of expression between samples, and is particularly important when performing differential expression analyses [[1](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-10-r106)]. 
+ - **RNA composition:** A few highly differentially expressed genes between samples, differences in the number of genes expressed between samples, or presence of contamination can skew some types of normalization methods. Accounting for RNA composition is recommended for accurate comparison of expression between samples, and is particularly important when performing differential expression analyses [[1](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-10-r106)]. 
  
-	In the example, if we were to divide each sample by the total number of counts to normalize, the counts would be greatly skewed by the DE gene, which takes up most of the counts for *Sample A*, but not *Sample B*. Most other genes for *Sample A* would be divided by the larger number of total counts and appear to be less expressed than in *Sample B*.
-    
+	In the example, if we were to divide each sample by the total number of counts to normalize, the counts would be greatly skewed by the DE gene, which takes up most of the counts for *Sample A*, but not *Sample B*. Most other genes for *Sample A* would be divided by the larger number of total counts and appear to be less expressed than those same genes in *Sample B*.  
+	
     <img src="../img/normalization_methods_composition.png" width="400">
     
 ***While normalization is essential for differential expression analyses, it is also necessary for exploratory data analysis, visualization of data, and whenever you are exploring or comparing counts between or within samples.***
@@ -36,6 +36,16 @@ Several common normalization methods exist to account for these differences:
 - **Tool-specific metrics for normalization:** 
 	- DESeq2 uses a median of ratios method, which accounts for sequencing depth and RNA composition [[1](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-10-r106)]. 
 	- EdgeR uses a trimmed mean of M values (TMM) method that accounts for sequencing depth, RNA composition, and gene length [[2](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-3-r25)]
+	
+	| Normalization method | Description | Accounted factors | Recommendations for use |
+	| ---- | ---- | ---- | ---- |
+	| **CPM (counts per million)** | counts scaled by total number of reads | sequencing depth | comparison between replicates of the same samplegroup |
+	| **TPM (transcripts per kilobase million)** | counts per length of transcript (kb) per million reads mapped | sequencing depth and gene length | abundance comparisons of genes between and within samples of the same sample group, not for DE analysis |
+	| **RPKM/FPKM (reads/fragments per kilobase of exon per million reads/fragments mapped)** | similar to TPM | sequencing depth and gene length | comparisons of gene abundance between genes within a sample, not for between sample comparisons or DE analysis |
+	| **DESeq2's median of ratios method** | counts divided by sample-specific size factors determined by median ratio of gene counts relative to geometric mean per gene | sequencing depth and RNA composition | abundance comparisons of genes between samples and for DE analysis |
+	| **EdgeR's trimmed mean of M values (TMM) method** | uses a weighted trimmed mean of the log expression ratios to determine ratio estimate of RNA production between samples | sequencing depth, RNA composition, and gene length | abundance comparisons of genes between and within samples and for DE analysis |
+	
+	
 	
  ### RPKM/FPKM (not recommended)
  
@@ -54,17 +64,7 @@ Using RPKM/FPKM normalization, the total number of RPKM/FPKM normalized counts f
 
 For example, in the table above, SampleA has a greater proportion of counts associated with XCR1 (5.5/1,000,000) than does sampleB (5.5/1,500,000) even though the RPKM count values are the same. Therefore, we cannot directly compare the counts for XCR1 (or any other gene) between sampleA and sampleB because the total number of normalized counts are different between samples. 
 
-### TPM (recommended for within sample comparisons) 
-
-In contrast to RPKM/FPKM, TPM-normalized counts normalize for both sequencing depth and gene length, but have the same total TPM-normalized counts per sample. Therefore, the normalized count values are comparable both between and within samples.
-
 > *NOTE:* [This video by StatQuest](http://www.rna-seqblog.com/rpkm-fpkm-and-tpm-clearly-explained/) shows in more detail why TPM should be used in place of RPKM/FPKM if needing to normalize for sequencing depth and gene length.
-
-### Tool-specific metrics (recommended for between sample comparisons)
-
-Tool-specific metrics of normalization are often the best methods for comparing counts between samples. These methods account for the composition of the sample, so that the normalization factors are not skewed by outlier or differentially expressed genes.
-
->**NOTE:** EdgeR's **TMM method** of normalization is recommended for **all comparisons** (within and between samples).
 
 # Quality Control
 
