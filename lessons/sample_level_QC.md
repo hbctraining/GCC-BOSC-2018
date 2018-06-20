@@ -118,38 +118,30 @@ To explore the sources of variation in the data, we explore the other factors. N
 
 <img src="../img/example_PCA_cage.png" width="400">
 
-While the `sex` factor appears to separate samples on PC2.
+Then, we color by the `sex` factor, which appears to separate samples on PC2. This is good information to take note of, as we can use it downstream to account for the variation due to sex in the model and regress it out.
 
 <img src="../img/example_PCA_sex.png" width="400">
 
-The `strain` factor explains the variation on PC1.
+Next we explore the `strain` factor and find that it explains the variation on PC1. 
 
 <img src="../img/example_PCA_strain.png" width="400">
 
-Since we can identify the likely sources of variation driving PC1 and PC2, we can account for that variation in the model and regress it out. We continue to look for variation in our data due to treatment.
+This is great that we have been able to identify the sources of variation for both PC1 and PC2. By accounting for it in our model, we should be able to detect more genes differentially expressed due to `treatment`.
+
+Still we haven't found if `treatment` is a major source of variation after `strain` and `sex`. So, we explore PC3 and PC4 to see if `treatment` is driving the variation represented by either of these PCs.
 
 <img src="../img/example_PCA_treatmentPC3.png" width="400">
 
-In the final example, we can visualize the samples clustering by genotype on PC2 (13% variance). **If we saw one of the red samples below clustering with the blue samples (or vice versa), we might be worried about a mix-up. It would give us sufficient cause to remove that sample as an outlier and/or do some follow-up tests in the lab.**
+We find that the samples separate by `treatment` on PC3, and are optimistic about our DE analysis since our condition of interest, `treatment`, is separating on PC3 and we can regress out the variation driving PC1 and PC2.
 
-<img src="../img/PCA_example1.png" width="400">
-
-We can see that the plasmid expression level represents the major source of variation in the data on PC1 (55% variance).
-
-<img src="../img/PCA_example2.png" width="400">
-
-PCA is also a nice way to look for batch effects. In the below figure, we see batch 1 separate distinctly from batches 2 and 3.
-
-<img src="../img/PCA_example6.png" width="400">
-
-Even if your samples do not separate by PC1 or PC2, you may still get biologically relevant results from the DE analysis, just don't be surprised if you do not get a large number of DE genes. To give more power to the tool for detecting DE genes, it is best to account for  major, known sources of variation in your model. 
+Even if your samples do not separate by PC1 or PC2 or you can't identify the sources of variation, you may still get biologically relevant results from the DE analysis, just don't be surprised if you do not get a large number of DE genes. To give more power to the tool for detecting DE genes, it is best to account for major, known sources of variation in your model if you can identify them. 
 
 For details regarding the calculations performed for PCA, we encourage you to explore [StatQuest's video](https://www.youtube.com/watch?v=_UVHneBUBW0). 
 
 ***
 **Exercise**
 
-The figure below was generated from a time course experiment with sample groups 'Ctrl' and 'Sci' and the following timepoints: 0h, 2h, 8h, and 16h. 
+The figure below was generated from a time course experiment with sample groups, *Ctrl* and *Sci* and the following timepoints: *0h*, *2h*, *8h*, and *16h*. 
 
 - Determine the sources explaining the variation represented by PC1 and PC2.
 - Do the sample groups separate well?
