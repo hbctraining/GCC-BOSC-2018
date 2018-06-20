@@ -4,7 +4,7 @@ Understanding the steps in the experimental process of RNA extraction and prepar
 
 These important considerations include:
 
-1. Replicates
-2. Confounding
-3. Batch effects
+1. Number and type of **replicates**
+2. Avoiding **confounding**
+3. Addressing **batch effects**
 
