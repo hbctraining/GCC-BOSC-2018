@@ -64,4 +64,4 @@ Replicates are almost always preferred to greater sequencing depth for bulk RNA-
   
   ## Confounding
   
-  
+  <img src="../img/confounded_design.png" width="400">
