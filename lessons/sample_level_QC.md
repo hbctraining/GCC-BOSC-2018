@@ -24,7 +24,7 @@ The main factors often considered during normalization are:
     
     <img src="../img/normalization_methods_composition.png" width="400">
     
-While normalization is essential for differential expression analyses, it is also necessary for exploratory data analysis, visualization of data, and whenever you are exploring or comparing counts between or within samples.
+***While normalization is essential for differential expression analyses, it is also necessary for exploratory data analysis, visualization of data, and whenever you are exploring or comparing counts between or within samples.***
  
 ### Common normalization methods
 
