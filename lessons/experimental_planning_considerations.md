@@ -16,7 +16,7 @@ Experimental replicates can be performed as **technical replicates** or **biolog
 
 <img src="../img/replicates.png" width="400">
 
-*Image credit: Klaus B., EMBO J (2015) **34**: 2727-2730* [https://dx.doi.org/10.15252%2Fembj.201592958](https://dx.doi.org/10.15252%2Fembj.201592958)
+*Image credit: Klaus B., EMBO J (2015) **34**: 2727-2730. [https://dx.doi.org/10.15252%2Fembj.201592958](https://dx.doi.org/10.15252%2Fembj.201592958)*
 
 - **Technical replicates:** use the same biological sample to repeat the technical or experimental steps in order to accurately measure technical variation and remove it during analysis. 
 
@@ -28,7 +28,7 @@ In contrast, **biological replicates are absolutely essential**. For differentia
 
 <img src="../img/de_replicates_img.png" width="500">
 
-*Image credit: Liu, Y., et al., Bioinformatics (2014) **30**(3): 301–304* [https://doi.org/10.1093/bioinformatics/btt688](https://doi.org/10.1093/bioinformatics/btt688)
+*Image credit: Liu, Y., et al., Bioinformatics (2014) **30**(3): 301–304. [https://doi.org/10.1093/bioinformatics/btt688](https://doi.org/10.1093/bioinformatics/btt688)*
 
 As the figure above illustrates, **biological replicates are of greater importance than sequencing depth**. The figure shows the relationship between sequencing depth and number of replicates on the number of differentially expressed genes identified [[1](https://academic.oup.com/bioinformatics/article/30/3/301/228651/RNA-seq-differential-expression-studies-more)]. Note that an **increase in the number of replicates tends to return more DE genes than increasing the sequencing depth**. Therefore, generally more replicates are better than higher sequencing depth, with the caveat that higher depth is required for detection of lowly expressed DE genes and for performing isoform-level differential expression. 
 
