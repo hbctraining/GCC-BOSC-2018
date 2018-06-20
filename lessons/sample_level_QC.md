@@ -132,7 +132,7 @@ Worrisome about this plot is that we see two samples that do not cluster with th
 
 Still we haven't found if `treatment` is a major source of variation after `strain` and `sex`. So, we explore PC3 and PC4 to see if `treatment` is driving the variation represented by either of these PCs.
 
-<img src="../img/example_PCA_treatmentPC3.png" width="400">
+<img src="../img/example_PCA_treatmentPC3.png" width="600">
 
 We find that the samples separate by `treatment` on PC3, and are optimistic about our DE analysis since our condition of interest, `treatment`, is separating on PC3 and we can regress out the variation driving PC1 and PC2.
 
