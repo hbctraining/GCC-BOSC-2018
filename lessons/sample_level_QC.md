@@ -126,7 +126,9 @@ Next we explore the `strain` factor and find that it explains the variation on P
 
 <img src="../img/example_PCA_strain.png" width="400">
 
-This is great that we have been able to identify the sources of variation for both PC1 and PC2. By accounting for it in our model, we should be able to detect more genes differentially expressed due to `treatment`.
+It's great that we have been able to identify the sources of variation for both PC1 and PC2. By accounting for it in our model, we should be able to detect more genes differentially expressed due to `treatment`.
+
+Worrisome about this plot is that we see two samples that do not cluster with the correct strain. This would indicate a likely sample swap and should result in investigation on whether these samples are indeed the labeled strains. If we found out there was a switch, we could swap the samples in the metadata. However, if we think they are labeled correctly or are unsure, we could just remove the samples from the dataset.
 
 Still we haven't found if `treatment` is a major source of variation after `strain` and `sex`. So, we explore PC3 and PC4 to see if `treatment` is driving the variation represented by either of these PCs.
 
@@ -134,7 +136,7 @@ Still we haven't found if `treatment` is a major source of variation after `stra
 
 We find that the samples separate by `treatment` on PC3, and are optimistic about our DE analysis since our condition of interest, `treatment`, is separating on PC3 and we can regress out the variation driving PC1 and PC2.
 
-Even if your samples do not separate by PC1 or PC2 or you can't identify the sources of variation, you may still get biologically relevant results from the DE analysis, just don't be surprised if you do not get a large number of DE genes. To give more power to the tool for detecting DE genes, it is best to account for major, known sources of variation in your model if you can identify them. 
+Even if your samples do not separate by PC1 or PC2 or you can't identify the sources of variation, you may still get biologically relevant results from the DE analysis, just don't be surprised if you do not get a large number of DE genes. To give more power to the tool for detecting DE genes, it is best to account for major, known sources of variation in your model if you can identify them; this includes batch effects. 
 
 For details regarding the calculations performed for PCA, we encourage you to explore [StatQuest's video](https://www.youtube.com/watch?v=_UVHneBUBW0). 
 
