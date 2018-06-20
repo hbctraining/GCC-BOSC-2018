@@ -96,7 +96,7 @@ In the PCA plot below we can see our samplegroups, *EN* (pink) and *ENR* (blue),
 
 <img src="../img/PCA_example4.png" width="400">
 
-We can use other variables **present in our metadata** to explore other causes of the variation in our data, such as `individual` in this paired-design experiment:
+We can use other variables **present in our metadata** to explore other causes of the variation in our data, such as coloring by `individual` in this paired-design experiment:
 
 <img src="../img/PCA_example5.png" width="400">
 
