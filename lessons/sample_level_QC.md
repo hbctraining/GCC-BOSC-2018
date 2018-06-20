@@ -92,6 +92,8 @@ The principal component (PC) explaining the greatest amount of variation in the 
 
 PCA plots two PCs against each other, generally focusing on PC1 and PC2, which explain the largest amounts of variation in the data. **If two samples have similar levels of expression for the genes that contribute significantly to the variation represented by PC1, they will be plotted close together on the PC1 axis.** Therefore, we would expect that biological replicates to have similar scores (since the same genes are changing in the same directions) and cluster together on PC1 and/or PC2, and the samples from different treatment groups to have different scores and cluster apart. **This is easiest to understand by visualizing example PCA plots.**
 
+#### Example PCA1
+
 In the PCA plot below we can see our samplegroups, *EN* (pink) and *ENR* (blue), separate on PC1, this is generally what we hope for. PC1 explains 89% of the variation in the data, so it's likely that this variation is due to differences in gene expression between our samplegroups.
 
 <img src="../img/PCA_example4.png" width="400">
@@ -102,7 +104,9 @@ We can use other variables **present in our metadata** to explore other causes o
 
 We can determine that the 5% of variation in the data represented by PC2 is due to variation between individuals.
 
-In the next example, the metadata for the experiment are displayed below. The main condition of interest is `treatment`.
+#### Example PCA2
+
+In this next example, the metadata for the experiment is displayed below. The main condition of interest is `treatment`.
 
 <img src="../img/example_metadata.png" width="400">
 
