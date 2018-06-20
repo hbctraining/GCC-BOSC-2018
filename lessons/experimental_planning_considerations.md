@@ -12,11 +12,29 @@ We will go over each of these considerations in detail, discussing best practice
 
 ## Replicates
 
-Experimental replicates can be performed as technical replicates or biological replicates. 
+Experimental replicates can be performed as **technical replicates** or **biological replicates**. 
 
 <img src="../img/replicates.png" width="400">
 
-**Technical replicates** use the same biological sample to repeat the technical or experimental steps in order to accurately measure technical variation and remove it during analysis. **Biological replicates** use different biological samples of the same condition to measure the biological variation between samples. For differential expression analysis the better the estimates of biological variation, the more precise our estimates of the mean expression levels and the more accurate modeling of our data.
+- **Technical replicates:** use the same biological sample to repeat the technical or experimental steps in order to accurately measure technical variation and remove it during analysis. 
 
+- **Biological replicates** use different biological samples of the same condition to measure the biological variation between samples. 
 
-In the days of microarrays, technical replicates were considered a necessity; however, with the advanced RNA-Seq technologies, technical variation is much lower than biological variation and **technical replicates are unneccessary.
+In the days of microarrays, technical replicates were considered a necessity; however, with the current RNA-Seq technologies, technical variation is much lower than biological variation and **technical replicates are unneccessary**.
+
+In contrast, **biological replicates are absolutely essential**. For differential expression analysis, the more biological replicatse, the better the estimates of biological variation and the more precise our estimates of the mean expression levels. This leads to more accurate modeling of our data and identification of more differentially expressed genes.
+
+<img src="../img/de_replicates_img.png" width="500">
+
+As the figure above illustrates, **biological replicates are of greater importance than sequencing depth**. The figure shows the relationship between sequencing depth and number of replicates on the number of differentially expressed genes identified [[1](https://academic.oup.com/bioinformatics/article/30/3/301/228651/RNA-seq-differential-expression-studies-more)]. Note that an **increase in the number of replicates tends to return more DE genes than increasing the sequencing depth**. Therefore, generally more replicates are better than higher sequencing depth, with the caveat that higher depth is required for detection of lowly expressed DE genes and for performing isoform-level differential expression. 
+
+Replicates are almost always preferred to greater sequencing depth for bulk RNA-Seq. However, guidelines depend on the experiment performed and the desired analysis. Below we list some general guidelines for replicates and sequencing depth to help with experimental planning:
+
+- **General differential gene expression:**
+
+  - ENCODE guidelines suggest 30 million SE reads per sample (stranded).
+  
+  - 15 million reads per sample is often sufficient, if there are a good number of replicates (>3). 
+
+  - Spend money on more biological replicates, if possible.
+
