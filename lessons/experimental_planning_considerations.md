@@ -56,6 +56,8 @@ Replicates are almost always preferred to greater sequencing depth for bulk RNA-
 
   - Perform careful QC of RNA quality. Be careful to use high quality preparation methods and restrict analysis to high quality RIN # samples.  
   
-- Other types of RNA analyses (intron retention, small RNA-Seq, etc.) will have different suggestions. 
-
+- **Other types of RNA analyses (intron retention, small RNA-Seq, etc.):** 
+  
+  - Different recommendations depending on the analysis
+  
   - Almost always more biological replicates are better!
