@@ -96,7 +96,7 @@ Principal Component Analysis (PCA) is a technique used to **emphasize variation*
 
 PCA provides a dimensionality reduction technique that finds the greatest amounts of variation in a dataset and assigns it to principal components.
 
-The principal component (PC) explaining the greatest amount of variation in the dataset is PC1, while the PC explaining the second greatest amount of variation in the data is PC2, and so on and so forth until PC*n*.
+The principal component (PC) explaining the greatest amount of variation in the dataset is PC1, while the PC explaining the second greatest amount is PC2, and so on and so forth until PC*n*.
 
 PCA plots two PCs against each other, generally focusing on PC1 and PC2, which explain the largest amounts of variation in the data. **If two samples have similar levels of expression for the genes that contribute significantly to the variation represented by PC1, they will be plotted close together on the PC1 axis.** Therefore, we would expect that biological replicates to have similar scores (since the same genes are changing in the same directions) and cluster together on PC1 and/or PC2, and the samples from different treatment groups to have different scores and cluster apart. **This is easiest to understand by visualizing example PCA plots.**
 
