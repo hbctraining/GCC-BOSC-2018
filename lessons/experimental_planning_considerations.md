@@ -1,4 +1,4 @@
-## Experimental planning considerations
+# Experimental planning considerations
 
 Understanding the steps in the experimental process of RNA extraction and preparation of RNA-Seq libraries is helpful for designing an RNA-Seq experiment, but there are special considerations that should be highlighted that can greatly affect the quality of a differential expression analysis. 
 
@@ -10,7 +10,7 @@ These important considerations include:
 
 We will go over each of these considerations in detail, discussing best practice and optimal design.
 
-### Replicates
+## Replicates
 
 Experimental replicates can be performed as **technical replicates** or **biological replicates**. 
 
