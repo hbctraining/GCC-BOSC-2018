@@ -96,11 +96,11 @@ PCA plots two PCs against each other, generally focusing on PC1 and PC2, which e
 
 In the PCA plot below we can see our samplegroups, *EN* (pink) and *ENR* (blue), separate on PC1, this is generally what we hope for. PC1 explains 89% of the variation in the data, so it's likely that this variation is due to differences in gene expression between our samplegroups.
 
-<img src="../img/PCA_example4.png" width="400">
+<img src="../img/PCA_example4.png" width="600">
 
 We can use other variables **present in our metadata** to explore other causes of the variation in our data, such as coloring by `individual` in this paired-design experiment:
 
-<img src="../img/PCA_example5.png" width="400">
+<img src="../img/PCA_example5.png" width="600">
 
 We can determine that the 5% of variation in the data represented by PC2 is due to variation between individuals.
 
@@ -108,23 +108,23 @@ We can determine that the 5% of variation in the data represented by PC2 is due 
 
 In this next example, the metadata for the experiment is displayed below. The main condition of interest is `treatment`.
 
-<img src="../img/example_metadata.png" width="400">
+<img src="../img/example_metadata.png" width="600">
 
 When visualizing on PC1 and PC2, we don't see the samples separate by `treatment`, so we decide to explore other sources of variation present in the data. We hope that we have included all possible known sources of variation in our metadata table, and we can use these factors to color the PCA plot. 
 
-<img src="../img/example_PCA_treatmentPC1.png" width="400">
+<img src="../img/example_PCA_treatmentPC1.png" width="600">
 
 We start with the factor `cage`, but the `cage` factor does not seem to explain the variation on PC1 or PC2.
 
-<img src="../img/example_PCA_cage.png" width="400">
+<img src="../img/example_PCA_cage.png" width="600">
 
 Then, we color by the `sex` factor, which appears to separate samples on PC2. This is good information to take note of, as we can use it downstream to account for the variation due to sex in the model and regress it out.
 
-<img src="../img/example_PCA_sex.png" width="400">
+<img src="../img/example_PCA_sex.png" width="600">
 
 Next we explore the `strain` factor and find that it explains the variation on PC1. 
 
-<img src="../img/example_PCA_strain.png" width="400">
+<img src="../img/example_PCA_strain.png" width="600">
 
 It's great that we have been able to identify the sources of variation for both PC1 and PC2. By accounting for it in our model, we should be able to detect more genes differentially expressed due to `treatment`.
 
