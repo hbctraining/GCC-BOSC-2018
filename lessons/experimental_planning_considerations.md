@@ -64,6 +64,8 @@ Replicates are almost always preferred to greater sequencing depth for bulk RNA-
   
 ## Confounding
   
-A confounded experiment is one where you can not distinguish the separate effect of two different sources of variation in the data. For example, we know that sex has large effects on gene expression, and if all of our *control* mice were female and all of the *treatment* mice were male, then our treatment effect would be confounded by sex. We could not differentiate the effect of treatment from the effect of sex.
+A confounded RNA-Seq experiment is one where you **cannot distinguish the separate effects of two different sources of variation** in the data. 
+
+For example, we know that sex has large effects on gene expression, and if all of our *control* mice were female and all of the *treatment* mice were male, then our treatment effect would be confounded by sex. **We could not differentiate the effect of treatment from the effect of sex.**
 
   <img src="../img/confounded_design.png" width="500">
