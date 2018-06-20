@@ -90,7 +90,7 @@ Sample-level QC allows us to see how well our replicates cluster together, as we
 
 ### [Principal Component Analysis (PCA)](https://hbctraining.github.io/DGE_workshop/lessons/principal_component_analysis.html)
 
-Principal Component Analysis (PCA) is a technique used to **emphasize variation** and bring out strong patterns in a dataset. To explore the variation in the data, we could **plot the expression values of each gene for each of our *n* samples against each other** in *n*-dimensional spaces. In the figure below we can see this if we had only two samples, but once we have more than 3 samples, we cannot visualize the samples in *n*-dimensional space.
+Principal Component Analysis (PCA) is a technique used to **emphasize variation** and bring out strong patterns in a dataset. To explore the variation in the data, we could **plot the expression values of each gene for each of our *n* samples against each other** in *n*-dimensional spaces. In the figure below we can see this if we had only two samples, but once we have more than 3 samples in 3-dimensional space, it becomes difficult to visualize.
 
 <img src="../img/PCA_2sample_genes.png" width="600">
 
