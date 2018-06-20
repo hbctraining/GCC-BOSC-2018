@@ -110,7 +110,7 @@ In this next example, the metadata for the experiment is displayed below. The ma
 
 <img src="../img/example_metadata.png" width="400">
 
-When visualizing on PC1 and PC2, we don't see the samples separate by `treatment`, so we decide to explore other sources of variation present in the data that are included in our metadata table. 
+When visualizing on PC1 and PC2, we don't see the samples separate by `treatment`, so we decide to explore other sources of variation present in the data. We hope that we have included all possible known sources of variation in our metadata table, and we can use these factors to color the PCA plot. 
 
 <img src="../img/example_PCA_treatmentPC1.png" width="400">
 
