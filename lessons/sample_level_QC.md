@@ -189,4 +189,4 @@ In addition to examining how well the samples/replicates cluster together, there
 
 <img src="../img/gene_filtering.png" width="600">
 
-**DESeq2 will perform this filtering by default; however other DE tools, such as EdgeR will not.**  Filtering is a necessary step, even if you are using limma-voom and/or edgeR's quasi-likelihood methods. Be sure to follow pre-filtering steps when these tools, as outlined in their user guides found on Bioconductor as they generally perform much better. 
+**DESeq2 will perform this filtering by default; however other DE tools, such as EdgeR will not.**  Filtering is a necessary step, even if you are using limma-voom and/or edgeR's quasi-likelihood methods. Be sure to follow pre-filtering steps when using these tools, as outlined in their user guides found on Bioconductor as they generally perform much better. 
