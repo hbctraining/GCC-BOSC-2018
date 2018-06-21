@@ -24,7 +24,7 @@ Experimental replicates can be performed as **technical replicates** or **biolog
 
 In the days of microarrays, technical replicates were considered a necessity; however, with the current RNA-Seq technologies, technical variation is much lower than biological variation and **technical replicates are unneccessary**.
 
-In contrast, **biological replicates are absolutely essential**. For differential expression analysis, the more biological replicatse, the better the estimates of biological variation and the more precise our estimates of the mean expression levels. This leads to more accurate modeling of our data and identification of more differentially expressed genes.
+In contrast, **biological replicates are absolutely essential**. For differential expression analysis, the more biological replicates, the better the estimates of biological variation and the more precise our estimates of the mean expression levels. This leads to more accurate modeling of our data and identification of more differentially expressed genes.
 
 <img src="../img/de_replicates_img.png" width="500">
 
@@ -68,4 +68,12 @@ A confounded RNA-Seq experiment is one where you **cannot distinguish the separa
 
 For example, we know that sex has large effects on gene expression, and if all of our *control* mice were female and all of the *treatment* mice were male, then our treatment effect would be confounded by sex. **We could not differentiate the effect of treatment from the effect of sex.**
 
-  <img src="../img/confounded_design.png" width="500">
+<img src="../img/confounded_design.png" width="500">  
+
+**To avoid confounding:**
+
+- Ensure animals in each condition are all the **same sex, age, litter, and batch**, if possible.
+
+- If not possible, then ensure to split the animals equally between conditions
+
+  <img src="../img/non_confounded_design.png" width="500">
