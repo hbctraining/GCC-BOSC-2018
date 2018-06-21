@@ -84,7 +84,7 @@ Batch effects are a significant issue for RNA-Seq analyses, since you can see si
 
 <img src="../img/batch_effect_pca.png" width="600">
 
-*Image credit: [Hicks SC, et al., bioRxiv (2015)](https://doi.org/10.1101/025528)*
+*Image credit: [Hicks SC, et al., bioRxiv (2015)](https://www.biorxiv.org/content/early/2015/08/25/025528)*
 
 **How to know whether you have batches?**
 
@@ -110,7 +110,7 @@ If *any* of the answers was **‘No’**, then you have batches.
 
     <img src="../img/confounded_batch.png" width="400">
     
-    *Image credit: [Hicks SC, et al., bioRxiv (2015)](https://doi.org/10.1101/025528)*
+    *Image credit: [Hicks SC, et al., bioRxiv (2015)](https://www.biorxiv.org/content/early/2015/08/25/025528)*
   
   - **DO** split replicates of the different sample groups across batches. 
   
