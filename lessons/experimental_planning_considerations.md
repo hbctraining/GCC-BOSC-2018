@@ -76,4 +76,4 @@ For example, we know that sex has large effects on gene expression, and if all o
 
 - If not possible, then ensure to split the animals equally between conditions
 
-  <img src="../img/non_confounded_design.png" width="500">
+  <img src="../img/non_confounded_design.png" width="400">
