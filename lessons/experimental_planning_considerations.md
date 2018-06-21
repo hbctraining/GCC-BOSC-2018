@@ -70,10 +70,16 @@ For example, we know that sex has large effects on gene expression, and if all o
 
 <img src="../img/confounded_design.png" width="500">  
 
-**To avoid confounding:**
+**To AVOID confounding:**
 
 - Ensure animals in each condition are all the **same sex, age, litter, and batch**, if possible.
 
 - If not possible, then ensure to split the animals equally between conditions
 
   <img src="../img/non_confounded_design.png" width="400">
+
+## Batch effects
+
+Batch effects are a significant issue for RNA-Seq analyses, since you can see significant differences in expression due solely to the batch effect.
+
+<img src="../img/batch_effect_pca.png" width="400">
