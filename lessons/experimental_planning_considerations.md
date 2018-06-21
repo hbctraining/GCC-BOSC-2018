@@ -129,7 +129,7 @@ Your experiment has three different treatment groups, A, B, and C. Due to the le
 2. To perform the RNA isolations more quickly, you devote two researchers to perform the RNA isolations. Fill in their initials to the planned samples they will prepare: `MP` or `RK`.
 
 | sample | treatment | sex | replicate | RNA isolation | Researcher |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | sample1 | A | F | 1 | 
 | sample2 | A | F | 2 |
 | sample3 | A | M | 3 |
