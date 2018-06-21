@@ -83,3 +83,13 @@ For example, we know that sex has large effects on gene expression, and if all o
 Batch effects are a significant issue for RNA-Seq analyses, since you can see significant differences in expression due solely to the batch effect.
 
 <img src="../img/batch_effect_pca.png" width="600">
+
+**How to know whether you have batches?**
+
+- Were all RNA isolations performed on the same day?
+- Were all library preparations performed on the same day?
+- Did the same person perform the RNA isolation/library preparation for all samples?
+- Did you use the same reagents for all samples?
+- Did you perform the RNA isolation/library preparation in the same location?
+
+If *any* of the answers was **‘No’**, then you have batches.
