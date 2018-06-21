@@ -98,7 +98,7 @@ Batch effects are a significant issue for RNA-Seq analyses, since you can see si
 
 - Did you perform the RNA isolation/library preparation in the same location?
 
-If *any* of the answers was **‘No’**, then you have batches.
+If *any* of the answers is **‘No’**, then you have batches.
 
 ### Best practices regarding batches:
 
@@ -126,10 +126,10 @@ Your experiment has three different treatment groups, A, B, and C. Due to the le
 
 1. Fill in the `RNA isolation` column of the metadata table so as to avoid confounding. Since we can only prepare 2 samples at a time and we have 12 samples total, you will need to isolate RNA in 6 batches. In the `RNA isolation` column, enter one of the following values for each sample: `group1`, `group2`, `group3`, `group4`, `group5`, `group6`.
 
-2. If you had to perform two rounds of library preparation, how would you divide your samples? Fill in the `Library prep` column of the metadata with either: `first_round` or `second_round`
+2. To perform the RNA isolations more quickly, you devote two researchers to perform the RNA isolations. Fill in their initials to the planned samples they will prepare: `MP` or `RK`.
 
-| sample | treatment | sex | replicate | RNA isolation | Library prep |
-| --- | --- | --- | --- | --- | --- |
+| sample | treatment | sex | replicate | RNA isolation | Researcher |
+| --- | --- | --- | --- | --- | --- | --- |
 | sample1 | A | F | 1 | 
 | sample2 | A | F | 2 |
 | sample3 | A | M | 3 |
