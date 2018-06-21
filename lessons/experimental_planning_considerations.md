@@ -86,7 +86,7 @@ Batch effects are a significant issue for RNA-Seq analyses, since you can see si
 
 *Image credit: [Hicks SC, et al., bioRxiv (2015)](https://www.biorxiv.org/content/early/2015/08/25/025528)*
 
-**How to know whether you have batches?**
+### How to know whether you have batches?
 
 - Were all RNA isolations performed on the same day?
 
@@ -100,9 +100,9 @@ Batch effects are a significant issue for RNA-Seq analyses, since you can see si
 
 If *any* of the answers was **‘No’**, then you have batches.
 
-**Best practices regarding batches:**
+### Best practices regarding batches:
 
-- Design the experiment in a way to avoid batches, if possible.
+- Design the experiment in a way to **avoid batches**, if possible.
 
 - If unable to avoid batches:
 
