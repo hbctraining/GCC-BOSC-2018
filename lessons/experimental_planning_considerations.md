@@ -108,7 +108,7 @@ If *any* of the answers was **‘No’**, then you have batches.
 
   - **Do NOT confound** your experiment by batch:
 
-    <img src="../img/confounded_batch.png" width="400">
+    <img src="../img/confounded_batch.png" width="300">
     
     *Image credit: [Hicks SC, et al., bioRxiv (2015)](https://www.biorxiv.org/content/early/2015/08/25/025528)*
   
