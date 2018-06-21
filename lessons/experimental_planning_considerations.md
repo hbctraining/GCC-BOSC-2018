@@ -122,9 +122,11 @@ If *any* of the answers was **‘No’**, then you have batches.
     
  ***
  **Exercise**
-Your experiment has three different treatment groups, A, B, and C. Due to the lengthy process of tissue extraction, you can only isolate the RNA from two samples at the same time. You plan to have 4 replicates per group. 
+Your experiment has three different treatment groups, A, B, and C. Due to the lengthy process of tissue extraction, you can only isolate the RNA from two samples at the same time. You plan to have 4 replicates per group.
 
-Fill in the `RNA isolation` column of the metadata table so as to avoid confounding. Since we can only prepare 2 samples at a time and we have 12 samples total, you will need to isolate RNA in 6 batches. In the `RNA isolation` column, enter one of the following values for each sample: `group1`, `group2`, `group3`, `group4`, `group5`, `group6`.
+1. Fill in the `RNA isolation` column of the metadata table so as to avoid confounding. Since we can only prepare 2 samples at a time and we have 12 samples total, you will need to isolate RNA in 6 batches. In the `RNA isolation` column, enter one of the following values for each sample: `group1`, `group2`, `group3`, `group4`, `group5`, `group6`.
+
+2. If you had to perform two rounds of library preparation, how would you divide your samples? Fill in the `Library prep` column of the metadata with either: `first_round` or `second_round`
 
 | sample | treatment | sex | replicate | RNA isolation | Library prep |
 | --- | --- | --- | --- | --- | --- |
