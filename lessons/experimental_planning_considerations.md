@@ -116,11 +116,11 @@ If *any* of the answers was **‘No’**, then you have batches.
   
       - The more replicates the better (definitely more than 2).
   
-    <img src="../img/batch_effect.png" width="400">
+    <img src="../img/batch_effect.png" width="300">
     
   - **DO** include batch information in your experimental metadata
 
     - During the analysis, we can regress out the variation due to batch so it doesn’t affect our results if we have that information.
   
-    <img src="../img/metadata_batch.png" width="400">
+    <img src="../img/metadata_batch.png" width="300">
     
