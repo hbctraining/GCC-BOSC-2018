@@ -82,4 +82,4 @@ For example, we know that sex has large effects on gene expression, and if all o
 
 Batch effects are a significant issue for RNA-Seq analyses, since you can see significant differences in expression due solely to the batch effect.
 
-<img src="../img/batch_effect_pca.png" width="400">
+<img src="../img/batch_effect_pca.png" width="600">
