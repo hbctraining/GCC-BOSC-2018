@@ -112,17 +112,33 @@ If *any* of the answers was **‘No’**, then you have batches.
     
     *Image credit: [Hicks SC, et al., bioRxiv (2015)](https://www.biorxiv.org/content/early/2015/08/25/025528)*
   
-  - **DO** split replicates of the different sample groups across batches. 
+  - **DO** split replicates of the different sample groups across batches. The more replicates the better (definitely more than 2).
   
     <img src="../img/batch_effect.png" width="300">
     
-    - The more replicates the better (definitely more than 2).
-    
-  - **DO** include batch information in your experimental metadata
+  - **DO** include batch information in your **experimental metadata**. During the analysis, we can regress out the variation due to batch so it doesn’t affect our results if we have that information.
 
     <img src="../img/metadata_batch.png" width="300">
     
-    - During the analysis, we can regress out the variation due to batch so it doesn’t affect our results if we have that information.
-  
+ ***
+ **Exercise**
+Your experiment has three different treatment groups, A, B, and C. Due to the lengthy process of tissue extraction, you can only isolate the RNA from two samples at the same time. You plan to have 4 replicates per group. 
 
-    
+Fill in the `RNA isolation` column of the metadata table so as to avoid confounding. Since we can only prepare 2 samples at a time and we have 12 samples total, you will need to isolate RNA in 6 batches. In the `RNA isolation` column, enter one of the following values for each sample: `group1`, `group2`, `group3`, `group4`, `group5`, `group6`.
+
+| sample | treatment | sex | replicate | RNA isolation | Library prep |
+| --- | --- | --- | --- | --- | --- |
+| sample1 | A | F | 1 | 
+| sample2 | A | F | 2 |
+| sample3 | A | M | 3 |
+| sample4 | A | M | 4 |
+| sample5 | B | F | 1 |
+| sample6 | B | F | 2 |
+| sample7 | B | M | 3 |
+| sample8 | B | M | 4 |
+| sample9 | C | F | 1 |
+| sample10 | C | F | 2 |
+| sample11 | C | M | 3 |
+| sample12 | C | M | 4 |
+
+***    
