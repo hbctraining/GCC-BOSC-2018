@@ -49,7 +49,15 @@ The above plot would be great to look at the expression levels of a good number 
 
 ## DEGreport
 
-If you do use the DESeq2 package for differential expression analysis, the package 'DEGreport' has a lot of great functions to draw a lot of the above plots in addition to several others. Some examples are available in [this vignette](https://bioconductor.org/packages/release/bioc/vignettes/DEGreport/inst/doc/DEGreport.html), and some others are shown below.
+If you do use the DESeq2 package for differential expression analysis, the package 'DEGreport' has a lot of great functions to draw a lot of the above plots in addition to several others. Some examples are available in [this vignette](https://bioconductor.org/packages/release/bioc/vignettes/DEGreport/inst/doc/DEGreport.html), and some of them are shown below.
+
+When performing DE analysis on several groups, e.g. a time course experiment, grouping together genes that have similar patterns of expression and visualizing these patterns can be very helpful. The `degPatterns()` function in the DEGreport package performs the analysis and creates a display with this information.
+
+<img src="../img/clusters_paper.png" width="700">
+
+*Image adapted from [doi: (10.12688/f1000research.12093.2)[https://f1000research.com/articles/6-1976/v2]).*
+
+> In addition to displaying the patterns, `degPatterns()` outputs a list to enable the user to extract the genes in each grouping.
 
 ***
 
