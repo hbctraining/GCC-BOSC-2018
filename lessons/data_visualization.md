@@ -53,7 +53,7 @@ If you do use the DESeq2 package for differential expression analysis, the packa
 
 When performing DE analysis on several groups, e.g. a time course experiment, grouping together genes that have similar patterns of expression and visualizing these patterns can be very helpful. The `degPatterns()` function in the DEGreport package performs the analysis and creates a display with this information.
 
-<img src="../img/DEGpatterns.png" width="600">
+<img src="../img/DEGpatterns.png" width="700">
 
 *Image adapted from [doi: (10.12688/f1000research.12093.2)[https://f1000research.com/articles/6-1976/v2]).*
 
