@@ -35,7 +35,7 @@ The plot below displays the top 20 significantly differentially expressed genes.
 
 In addition to plotting subsets, we could also extract the normalized values of *all* the significant genes and plot a heatmap of their expression using `pheatmap()`.
          
-![sigOE_heatmap](../img/sigOE_heatmap.png)       
+<img src="../img/sigOE_heatmap.png" width="600">      
 
 In this heatmap Z-scores are calculated for each row (each gene) and these are plotted instead of the normalized expression values; this ensures that the expression patterns/trends that we want to visualize are not overwhelmed by the expression values.
 
