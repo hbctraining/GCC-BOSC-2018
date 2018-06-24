@@ -127,7 +127,7 @@ Your experiment has three different treatment groups, A, B, and C. Due to the le
 
 1. Fill in the `RNA isolation` column of the metadata table. Since we can only prepare 2 samples at a time and we have 12 samples total, you will need to isolate RNA in 6 batches. In the `RNA isolation` column, enter one of the following values for each sample: `group1`, `group2`, `group3`, `group4`, `group5`, `group6`. Make sure to fill in the table so as to avoid confounding by `sex` and batch of `RNA isolation`. 
 
-2. To perform the RNA isolations more quickly, you devote two researchers to perform the RNA isolations. Fill in their initials to the `Researcher` column for the samples they will prepare: `AB` or `CD`.
+2. To perform the RNA isolations more quickly, you devote two researchers to perform the RNA isolations. Fill in their initials to the `researcher` column for the samples they will prepare: use initials `AB` or `CD`.
 
 | sample | treatment | sex | replicate | RNA isolation | researcher |
 | --- | --- | --- | --- | --- | --- |
