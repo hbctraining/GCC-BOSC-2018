@@ -35,7 +35,7 @@ The focus of this workshop is to outline current standards and required resource
 | [Data management](https://hbctraining.github.io/GCC-BOSC-2018/slides/data_management.pdf) | 15 mins | Radhika Khetani |
 | Break | 30 mins |  |
 | [Raw data QC](https://hbctraining.github.io/GCC-BOSC-2018/slides/QC_rawdata_mp.pdf) | 30 mins | Mary Piper |
-| [Mapping/quantification](https://hbctraining.github.io/GCC-BOSC-2018/slides/alignment_quantification.pdf)| 25 mins | Radhika Khetani |
+| [Mapping/quantification](https://hbctraining.github.io/GCC-BOSC-2018/slides/alignment_quantification.pdf)| 25 mins | Meeta Mistry |
 | [Sample-level assessment](https://hbctraining.github.io/GCC-BOSC-2018/lessons/sample_level_QC.html) | 30 mins | Mary Piper |
 | [Count modeling and hypothesis testing](lessons/count_modeling.md) | 30 mins | Meeta Mistry |
 | [Visualization of results](lessons/data_visualization.md)| 15 mins | Radhika Khetani |
