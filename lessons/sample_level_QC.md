@@ -1,4 +1,4 @@
-# Differential gene expression (DGE) analysis overview 
+## Differential gene expression (DGE) analysis overview 
 
 The goal of RNA-seq is often to perform differential expression testing to determine which genes are expressed at different levels between conditions. These genes can offer biological insight into the processes affected by the condition(s) of interest. 
 
