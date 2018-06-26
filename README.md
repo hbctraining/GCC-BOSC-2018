@@ -22,6 +22,18 @@ The focus of this workshop is to outline current standards and required resource
 ### Contents
 
 
-| Lessons            | Duration |
-|:------------------------|:----------|
-| |  |
+| Lessons            | Duration | Presenter | 
+|:------------------------|:----------|:----------|
+| Introduction | 15mins | Radhika Khetani |
+| Library Prep | 40mins | Radhika Khetani |
+| Sequencing steps & sequencers | 30mins | Meeta Mistry |
+| Experimental planning considerations | 35mins | Mary Piper |
+| Strategies for bulk RNA-seq analysis | 30mins | Meeta Mistry |
+| Break | 30mins |  |
+| Data management plan (RDM webpage) | 15mins | Radhika Khetani |
+| Raw data QC | 30mins | Mary Piper |
+| Mapping/quantification | 30mins | Radhika Khetani |
+| Sample-level assessment | 30mins | Mary Piper |
+| Count modeling and hypothesis testing | 30mins | Meeta Mistry |
+| Visualization of results | 25mins | Radhika Khetani |
+| Functional analysis | 20mins | Mary Piper |
