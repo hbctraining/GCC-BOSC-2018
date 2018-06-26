@@ -33,7 +33,7 @@ The focus of this workshop is to outline current standards and required resource
 | Break | 30 mins |  |
 | [Raw data QC](https://www.dropbox.com/s/2vpzsh8indczo8a/QC_rawdata_mp.pdf?dl=1) | 30 mins | Mary Piper |
 | Mapping/quantification | 25 mins | Radhika Khetani |
-| [Sample-level assessment](https://hbctraining.github.io/bosc2018/lessons/sample_level_QC.html) | 30 mins | Mary Piper |
+| [Sample-level assessment](https://hbctraining.github.io/bGCC-BOSC-2018/lessons/sample_level_QC.html) | 30 mins | Mary Piper |
 | Count modeling and hypothesis testing | 30 mins | Meeta Mistry |
 | Visualization of results | 15 mins | Radhika Khetani |
 | [Functional analysis](https://www.dropbox.com/s/bhxapuudk3jybxy/functional_analysis_mp.pdf?dl=1) | 20 mins | Mary Piper |
