@@ -6,18 +6,13 @@ date: "May 12, 2017"
 
 Approximate time: 30 minutes
 
-## Learning Objectives 
+## Count modeling and Hypothesis testing
 
-* Explain why negative binomial distribution is used to model RNA-seq count data
-* The mean-variance relationship and how that changes as we add replicates
-* Tools for gene-level differential expression analysis 
-	* DESeq2
-	* edgeR
-* Tools for transcript-level differential expression analysis 
-* Hypothesis testing
-	* pairwise comparisons
-	* multiple levels/time series 
-* Multiple test correction
+Once the count data is filtered, the next step is to perform the differential expression analysis.
+
+<img src="../img/deseq_counts_overview.png" width="600">
+
+Internally, DESeq2 is performing a number of steps but here we will focus on describing the count modeling and hypothesis testing. Modeling is a mathematically formalized way to approximate how the data behaves given a set of parameters. 
 
 ## Characteristics of RNA-seq count data
 
@@ -95,26 +90,11 @@ Even as new methods are continuously being developed, there are a select few tha
 
 Until this point we have focused on looking for expression changes at the gene-level. If you are interested in looking at **splice isoform expression changes between groups**, not that the previous methods (i.e DESeq2) will not work. To demonstrate how to identify transcript-level differential expression we will describe a tool called **Sleuth**.
 
-## What is Sleuth?
+[Sleuth](http://pachterlab.github.io/sleuth/) is a fast, lightweight tool that uses transcript abundance estimates output from **pseudo-alignment** algorithms that use **bootstrap sampling**, such as Sailfish, Salmon, and Kallisto, to perform differential expression analysis of gene isoforms. Sleuth accounts for this technical variability by using **bootstraps as a proxy for technical replicates**, which are used to model the technical variability in the abundance estimates. Bootstrapping essentially **calculates the abundance estimates for all genes using a different sub-sample of reads** during each round of bootstrapping. The variation in the abundance estimates output from each round of bootstrapping is used for the estimation of the technical variance for each gene. 
 
-[Sleuth](http://pachterlab.github.io/sleuth/) is a fast, lightweight tool that uses transcript abundance estimates output from **pseudo-alignment** algorithms that use **bootstrap sampling**, such as Sailfish, Salmon, and Kallisto, to perform differential expression analysis of gene isoforms. 
+> More information about the theory/process for sleuth is available in the [Nature Methods paper](https://www.nature.com/articles/nmeth.4324), this [blogpost](https://liorpachter.wordpress.com/2015/08/17/a-sleuth-for-rna-seq/) and step-by-step tutorials are available on the [sleuth website](https://pachterlab.github.io/sleuth/walkthroughs).
 
-To analyze the differential expression of gene isoforms, it is expected that RNA-Seq reads will often align to multiple isoforms of the same gene. Therefore, **multimapping reads cannot be ignored** to properly determine abundances of gene isoforms. 
-
-Due to the statistical procedure required to assign reads to gene isoforms, in addition to the random processes underlying RNA-Seq, there will be **technical variability in the abundance estimates** output from the pseudo-alignment tool [[2](https://rawgit.com/pachterlab/sleuth/master/inst/doc/intro.html), [3](https://www.nature.com/articles/nmeth.4324)]. Therefore, **we would need technical replicates to distinguish technical variability from the biological variability**.
-
-Sleuth accounts for this technical variability by using **bootstraps as a proxy for technical replicates**, which are used to model the technical variability in the abundance estimates. Bootstrapping essentially **calculates the abundance estimates for all genes using a different sub-sample of reads** during each round of bootstrapping. The variation in the abundance estimates output from each round of bootstrapping is used for the estimation of the technical variance for each gene. 
-
-<p align="center">
-  <img src="../img/sleuth_tech_var.png" width="600"/>
-</p>
-
-_Adapted from: Nature Methods **14**, 687–690 (2017)_
-
-
-In addition to performing differential expression analysis of transcripts, the Sleuth tool also provides an html interface allowing exploration of the data and differential expression results interactively. More information about the theory/process for sleuth is available in the [Nature Methods paper](https://www.nature.com/articles/nmeth.4324), this [blogpost](https://liorpachter.wordpress.com/2015/08/17/a-sleuth-for-rna-seq/) and step-by-step tutorials are available on the [sleuth website](https://pachterlab.github.io/sleuth/walkthroughs).
-
-***NOTE:*** *Kallisto is distributed under a non-commercial license, while Sailfish and Salmon are distributed under the [GNU General Public License, version 3](http://www.gnu.org/licenses/gpl.html).*
+> **NOTE:** *Kallisto is distributed under a non-commercial license, while Sailfish and Salmon are distributed under the [GNU General Public License, version 3](http://www.gnu.org/licenses/gpl.html).*
 
 
 ## Hypothesis testing
@@ -132,7 +112,6 @@ In the example below, we have two sample groups: fetal brain samples and postnat
 Because, more often than not **there is much more going on with your data than what you are anticipating**. The goal of differential expression analysis to determine the relative role of these effects, and to separate the “interesting” from the “uninteresting”.
 
 <img src="../img/de_variation.png" width="500">
-
 
 First, for each gene we set up a **null hypothesis**, which in our case is that **there is no differential expression across the two sample groups**. Notice that we can do this without observing any data, because it is based on a thought experiment. Second, we **use a statistical test** to determine if based on the observed data, **the null hypothesis is true**. 
 
