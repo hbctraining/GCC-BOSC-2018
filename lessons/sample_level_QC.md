@@ -9,6 +9,14 @@ To determine the expression levels of genes, our RNA-seq workflow followed the s
 
 In the next few lessons, we will discuss the steps in an **end-to-end gene-level RNA-seq differential expression workflow**. We will start with the count matrix, perform exploratory data analysis for quality assessment and to explore the relationship between samples, perform differential expression analysis, and visually explore the results prior to performing downstream functional analysis.
 
+So what does this count data actually represent? The count data used for differential expression analysis represents the number of sequence reads that originated from a particular gene. The higher the number of counts, the more reads associated with that gene, and the assumption that there was a higher level of expression of that gene in the sample. 
+
+<img src="../img/deseq_counts_overview.png" width="600">
+
+**We will be using [DESeq2](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8) for the DE analysis, and the analysis steps with DESeq2 are shown in the flowchart below in green**. DESeq2 first normalizes the count data to account for differences in library sizes and RNA composition between samples. Then, we will use the normalized counts to make some plots for QC at the gene and sample level. The final step is to use the appropriate functions from the DESeq2 package to perform the differential expression analysis. We will go in-depth into each of these steps in the following lessons, but additional details and helpful suggestions regarding DESeq2 can be found in the [DESeq2 vignette](http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html).
+
+<img src="../img/deseq_workflow_full.png" width="200">
+
 ## Normalization
 
 The first step in the DE analysis workflow is count normalization, which is necessary to make accurate comparisons of gene expression between samples.
