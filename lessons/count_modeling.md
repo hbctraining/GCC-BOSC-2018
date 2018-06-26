@@ -10,7 +10,7 @@ Approximate time: 30 minutes
 
 Once the count data is filtered, the next step is to perform the differential expression analysis.
 
-<img src="../img/deseq_counts_overview.png" width="600">
+<img src="../img/deseq_workflow_full.png" width="600">
 
 Internally, DESeq2 is performing a number of steps but here we will focus on describing the count modeling and hypothesis testing. Modeling is a mathematically formalized way to approximate how the data behaves given a set of parameters. 
 
