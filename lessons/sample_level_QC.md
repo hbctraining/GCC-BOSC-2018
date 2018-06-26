@@ -19,8 +19,6 @@ So what does the count data actually represent? The count data used for differen
 
 The first step in the DE analysis workflow is count normalization, which is necessary to make accurate comparisons of gene expression between samples.
 
-<img src="../img/deseq_workflow_normalization.png" width="200">
-
 The counts of mapped reads for each gene is proportional to the expression of RNA ("interesting") in addition to many other factors ("uninteresting"). Normalization is the process of scaling raw count values to account for the "uninteresting" factors. In this way the expression levels are more comparable between and within samples.
 
 The main factors often considered during normalization are:
