@@ -102,9 +102,9 @@ Generally, we focus on PC1 and PC2 (which explain the largest amounts of variati
 
 <img src="../img/wt_pca.png" width="700">
 
-#### Example PCA2
+#### Example PCA
 
-In this next example, the metadata for the experiment is displayed below. The main condition of interest is `treatment`.
+In this example, the metadata for the experiment is displayed below. The main condition of interest is `treatment`.
 
 <img src="../img/example_metadata.png" width="600">
 
