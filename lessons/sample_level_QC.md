@@ -100,7 +100,7 @@ Principal Component Analysis (PCA) is a dimensionality reduction technique that 
 
 Generally, we focus on PC1 and PC2 (which explain the largest amounts of variation in the data) and plot them against each other. In an ideal experiment, we would expect all replicates for each sample group to cluster together and the sample groups to cluster apart in the PCA plot as shown below.
 
-<img src="../img/example_pca_ideal.png" width="700">
+<img src="../img/wt_pca.png" width="700">
 
 #### Example PCA2
 
