@@ -11,7 +11,7 @@ So what does the count data actually represent? The count data used for differen
 
 <img src="../img/deseq_counts_overview.png" width="600">
 
-**We will be using [DESeq2](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8) for the DE analysis, and the analysis steps with DESeq2 are shown in the flowchart below in green**. DESeq2 first normalizes the count data to account for differences in library sizes and RNA composition between samples. Then, we will use the normalized counts to make some plots for QC at the gene and sample level. The final step is to use the appropriate functions from the DESeq2 package to perform the differential expression analysis. For more in-depth detail into each of these steps, please see the [DESeq2 vignette](http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html).
+**The differential expression analysis steps are shown in the flowchart below in green**. First, the count data needs to be normalized to account for differences in library sizes and RNA composition between samples. Then, we will use the normalized counts to make some plots for QC at the gene and sample level. Finally, the differential expression analysis is performed using your tool of interest. We will discuss DE analysis in the context of the tool [DESeq2](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8). For more in-depth detail into each of these steps for DESeq2, please see the [DESeq2 vignette](http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html).
 
 <img src="../img/deseq_workflow_full.png" width="200">
 
