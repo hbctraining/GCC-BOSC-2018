@@ -31,7 +31,7 @@ The focus of this workshop is to outline current standards and required resource
 | Strategies for bulk RNA-seq analysis | 30 mins | Meeta Mistry |
 | Data management plan (RDM webpage) | 15 mins | Radhika Khetani |
 | Break | 30 mins |  |
-| Raw data QC | 30 mins | Mary Piper |
+| [Raw data QC](https://www.dropbox.com/s/2vpzsh8indczo8a/QC_rawdata_mp.pdf?dl=1) | 30 mins | Mary Piper |
 | Mapping/quantification | 25 mins | Radhika Khetani |
 | Sample-level assessment | 30 mins | Mary Piper |
 | Count modeling and hypothesis testing | 30 mins | Meeta Mistry |
