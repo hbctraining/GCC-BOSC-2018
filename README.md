@@ -13,13 +13,16 @@ This two-part workshop is geared towards researchers who are thinking about cond
 
 The focus of this workshop is to outline current standards and required resources for the analysis of RNA sequencing data. This workshop will not provide an exhaustive list of software tools or pipelines available; rather it aims to provide a fruitful discussion on how best to prepare for performing RNA-seq data analysis from the lab to manuscript preparation.
 
+***We are excited to be teaching this workshop with [Chris Fields](https://github.com/cjfields) from [HPCBio](https://hpcbio.illinois.edu/) at University of Illinois in Urbana-Champaign, [cjfields@illinois.edu](mailto:cjfields@illinois.edu).***
+
 ### Learning Objectives
 
+* Describe the resources needed to perform an experiment to identify differentially expressed genes using RNA sequencing, including in the laboratory and computationally.
+* Describe key experimental design considerations.
+* Explain the analysis workflow (including QC) starting with raw data and finishing with a list of differentially expressed genes. 
+* List tools and computational skills necessary to implement the various steps in the above-mentioned workflow.
 
-
-> These materials are developed for a trainer-led workshop, but also amenable to self-guided learning.
-
-### Contents
+### Contents/Schedule
 
 
 | Lessons            | Duration | Presenter | 
@@ -35,5 +38,5 @@ The focus of this workshop is to outline current standards and required resource
 | [Mapping/quantification](https://hbctraining.github.io/GCC-BOSC-2018/slides/alignment_quantification.pdf)| 25 mins | Radhika Khetani |
 | [Sample-level assessment](https://hbctraining.github.io/GCC-BOSC-2018/lessons/sample_level_QC.html) | 30 mins | Mary Piper |
 | [Count modeling and hypothesis testing](lessons/count_modeling.md) | 30 mins | Meeta Mistry |
-| [Visualization of results] (lessons/data_visualization.md)| 15 mins | Radhika Khetani |
+| [Visualization of results](lessons/data_visualization.md)| 15 mins | Radhika Khetani |
 | [Functional analysis](https://hbctraining.github.io/GCC-BOSC-2018/slides/functional_analysis_mp.pdf) | 20 mins | Mary Piper |
