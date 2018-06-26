@@ -50,7 +50,9 @@ Replicates are almost always preferred to greater sequencing depth for bulk RNA-
   
 - **Isoform-level differential expression:**
 
-  - More depth (> 60 million reads per sample) and paired-end reads are suggested.
+  - Of known isoforms, suggested to have a depth of at least 30 million reads per sample and paired-end reads.
+
+  - OF novel isoforms should have more depth (> 60 million reads per sample).
 
   - Choose biological replicates over paired/deeper sequencing.
 
