@@ -40,3 +40,7 @@ The focus of this workshop is to outline current standards and required resource
 | [Count modeling and hypothesis testing](lessons/count_modeling.md) | 30 mins | Meeta Mistry |
 | [Visualization of results](lessons/data_visualization.md)| 15 mins | Radhika Khetani |
 | [Functional analysis](https://hbctraining.github.io/GCC-BOSC-2018/slides/functional_analysis_mp.pdf) | 20 mins | Mary Piper |
+
+### Resources
+
+* [Information about RIN number from Agilent](https://www.agilent.com/cs/library/applications/5989-1165EN.pdf)
