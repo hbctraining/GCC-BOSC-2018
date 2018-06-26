@@ -96,7 +96,7 @@ Sample-level QC allows us to see how well our replicates cluster together, as we
 <img src="../img/sample_qc.png" width="700">
 
 ### [Principal Component Analysis (PCA)](https://hbctraining.github.io/DGE_workshop/lessons/principal_component_analysis.html)
-Principal Component Analysis (PCA) is a dimensionality reduction technique that finds the greatest amounts of variation in a dataset and assigns it to principal components. The principal component (PC) explaining the greatest amount of variation in the dataset is PC1, while the PC explaining the second greatest amount is PC2, and so on and so forth. For a more detailed explanation, please see additional materials here.
+Principal Component Analysis (PCA) is a dimensionality reduction technique that finds the greatest amounts of variation in a dataset and assigns it to principal components. The principal component (PC) explaining the greatest amount of variation in the dataset is PC1, while the PC explaining the second greatest amount is PC2, and so on and so forth. For a more detailed explanation, please see additional materials [here](https://hbctraining.github.io/DGE_workshop/lessons/principal_component_analysis.html).
 
 Generally, we focus on PC1 and PC2 (which explain the largest amounts of variation in the data) and plot them against each other. In an ideal experiment, we would expect all replicates for each sample group to cluster together and the sample groups to cluster apart in the PCA plot as shown below.
 
