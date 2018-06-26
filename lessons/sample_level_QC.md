@@ -96,28 +96,11 @@ Sample-level QC allows us to see how well our replicates cluster together, as we
 <img src="../img/sample_qc.png" width="700">
 
 ### [Principal Component Analysis (PCA)](https://hbctraining.github.io/DGE_workshop/lessons/principal_component_analysis.html)
+Principal Component Analysis (PCA) is a dimensionality reduction technique that finds the greatest amounts of variation in a dataset and assigns it to principal components. The principal component (PC) explaining the greatest amount of variation in the dataset is PC1, while the PC explaining the second greatest amount is PC2, and so on and so forth. For a more detailed explanation, please see additional materials here.
 
-Principal Component Analysis (PCA) is a technique used to **emphasize variation** and bring out strong patterns in a dataset. To explore the variation in the data, we could **plot the expression values of each gene for each of our *n* samples against each other** in *n*-dimensional spaces. In the figure below we can see this if we had only two samples, but once we have more than 3 samples in 3-dimensional space, it becomes difficult to visualize.
+Generally, we focus on PC1 and PC2 (which explain the largest amounts of variation in the data) and plot them against each other. In an ideal experiment, we would expect all replicates for each sample group to cluster together and the sample groups to cluster apart in the PCA plot as shown below.
 
-<img src="../img/PCA_2sample_genes.png" width="600">
-
-PCA provides a dimensionality reduction technique that finds the greatest amounts of variation in a dataset and assigns it to principal components.
-
-The principal component (PC) explaining the greatest amount of variation in the dataset is PC1, while the PC explaining the second greatest amount is PC2, and so on and so forth until PC*n*.
-
-PCA plots two PCs against each other, generally focusing on PC1 and PC2, which explain the largest amounts of variation in the data. **If two samples have similar levels of expression for the genes that contribute significantly to the variation represented by PC1, they will be plotted close together on the PC1 axis.** Therefore, we would expect that biological replicates to have similar scores (since the same genes are changing in the same directions) and cluster together on PC1 and/or PC2, and the samples from different treatment groups to have different scores and cluster apart. **This is easiest to understand by visualizing example PCA plots.**
-
-#### Example PCA1
-
-In the PCA plot below we can see our samplegroups, *EN* (pink) and *ENR* (blue), separate on PC1, this is generally what we hope for. PC1 explains 89% of the variation in the data, so it's likely that this variation is due to differences in gene expression between our samplegroups.
-
-<img src="../img/PCA_example4.png" width="600">
-
-We can use other variables **present in our metadata** to explore other causes of the variation in our data, such as coloring by `individual` in this paired-design experiment:
-
-<img src="../img/PCA_example5.png" width="600">
-
-We can determine that the 5% of variation in the data represented by PC2 is due to variation between individuals.
+<img src="../img/.png" width="700">
 
 #### Example PCA2
 
