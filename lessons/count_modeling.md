@@ -107,7 +107,7 @@ With differential expression analysis, we are looking for genes/transcripts that
 
 In the example below, we have two sample groups: fetal brain samples and postnatal brain samples. **Why does it not work to identify differentially expressed genes by ranking the genes by how different they are between the two groups (based on fold change values)?**
 
-<img src="../img/foldchange_heatmap.png" width="200">
+<img src="../img/de_norm_counts_var.png" width="200">
 
 Because, more often than not **there is much more going on with your data than what you are anticipating**. The goal of differential expression analysis to determine the relative role of these effects, and to separate the “interesting” from the “uninteresting”.
 
