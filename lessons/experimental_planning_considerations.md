@@ -133,19 +133,19 @@ Your experiment has three different treatment groups, A, B, and C. Due to the le
 
 2. **BONUS:** To perform the RNA isolations more quickly, you devote two researchers to perform the RNA isolations. Fill in their initials to the `researcher` column for the samples they will prepare: use initials `AB` or `CD`.
 
-| sample | treatment | sex | replicate | RNA isolation |
-| --- | --- | --- | --- | --- |
-| sample1 | A | F | 1 | 
-| sample2 | A | F | 2 |
-| sample3 | A | M | 3 |
-| sample4 | A | M | 4 |
-| sample5 | B | F | 1 |
-| sample6 | B | F | 2 |
-| sample7 | B | M | 3 |
-| sample8 | B | M | 4 |
-| sample9 | C | F | 1 |
-| sample10 | C | F | 2 |
-| sample11 | C | M | 3 |
-| sample12 | C | M | 4 |
+  | sample | treatment | sex | replicate | RNA isolation |
+  | --- | --- | --- | --- | --- |
+  | sample1 | A | F | 1 | 
+  | sample2 | A | F | 2 |
+  | sample3 | A | M | 3 |
+  | sample4 | A | M | 4 |
+  | sample5 | B | F | 1 |
+  | sample6 | B | F | 2 |
+  | sample7 | B | M | 3 |
+  | sample8 | B | M | 4 |
+  | sample9 | C | F | 1 |
+  | sample10 | C | F | 2 |
+  | sample11 | C | M | 3 |
+  | sample12 | C | M | 4 |
 
 ***    
