@@ -117,6 +117,8 @@ If *any* of the answers is **‘No’**, then you have batches.
   - **DO** split replicates of the different sample groups across batches. The more replicates the better (definitely more than 2).
   
     <img src="../img/batch_effect.png" width="300">
+
+    *Image credit: [Hicks SC, et al., bioRxiv (2015)](https://www.biorxiv.org/content/early/2015/08/25/025528)*
     
   - **DO** include batch information in your **experimental metadata**. During the analysis, we can regress out the variation due to batch so it doesn’t affect our results if we have that information.
 
